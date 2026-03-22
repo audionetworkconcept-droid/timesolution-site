@@ -1,0 +1,21 @@
+<svg width="560" height="140" viewBox="0 0 560 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="feedAccent" x1="0" y1="0" x2="140" y2="140" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1AC9FF"/>
+      <stop offset="1" stop-color="#00E5A8"/>
+    </linearGradient>
+    <linearGradient id="zeroAccent" x1="192" y1="36" x2="372" y2="84" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#A4F1FF"/>
+      <stop offset="1" stop-color="#00D7FF"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="8" y="14" width="112" height="112" rx="22" fill="#0E1A22" stroke="#355A6E" stroke-width="3"/>
+  <path d="M24 86C32 62 44 50 58 50C67 50 76 55 84 63C92 71 98 76 106 76" stroke="#1A4E68" stroke-width="7" stroke-linecap="round"/>
+  <path d="M24 79C34 58 46 45 62 45C72 45 80 51 89 59C97 67 103 72 112 72" stroke="url(#feedAccent)" stroke-width="8" stroke-linecap="round"/>
+  <path d="M34 36L49 61H34L49 86" stroke="#58D7FF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <text x="144" y="66" fill="#E8F6FF" font-family="Arial, sans-serif" font-size="54" font-weight="700" letter-spacing="-0.8">Feed</text>
+  <text x="272" y="66" fill="url(#zeroAccent)" font-family="Arial, sans-serif" font-size="54" font-weight="700" letter-spacing="-0.8">Zero</text>
+  <text x="146" y="101" fill="#B4C5D0" font-family="Arial, sans-serif" font-size="24" font-weight="600" letter-spacing="0.2">by AUDIOSN</text>
+</svg>

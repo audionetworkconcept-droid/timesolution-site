@@ -16,13 +16,13 @@
     <div class="container">
       <div class="nav-inner">
         <a href="/fr/" class="nav-logo">
-          <div class="nav-logo-mark">FZ</div>
-          FeedZero
+          <img src="../assets/img/feedzero-logo.svg" alt="Logo FeedZero" class="nav-logo-submark" loading="lazy">
         </a>
         <ul class="nav-links">
-          <li><a href="download.html">Télécharger</a></li>
-          <li><a href="docs/">Docs</a></li>
-          <li><a href="license.html">Licence</a></li>
+          <li><a href="#about">A propos</a></li>
+          <li><a href="#technologie">Technologie</a></li>
+          <li><a href="#modes">Modes</a></li>
+          <li><a href="#routing">Routing</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
         <div class="nav-lang nav-desktop">
@@ -35,9 +35,10 @@
       </div>
     </div>
     <div class="nav-mobile">
-      <a href="download.html">Télécharger</a>
-      <a href="docs/">Docs</a>
-      <a href="license.html">Licence</a>
+      <a href="#about">A propos</a>
+      <a href="#technologie">Technologie</a>
+      <a href="#modes">Modes</a>
+      <a href="#routing">Routing</a>
       <a href="contact.html">Contact</a>
       <div class="nav-lang">
         <a href="/fr/" data-lang="fr">FR</a>
@@ -52,12 +53,69 @@
     <section class="hero">
       <div class="container">
         <div class="hero-content">
-          <div class="hero-badge">v1 · Windows · Dante · DAW</div>
-          <h1>Zéro larsen.<br><span class="accent">En temps réel.</span></h1>
-          <p class="hero-sub">FeedZero détecte et supprime le feedback acoustique avant qu'il détruise votre son — sans interruption de service.</p>
+          <h1>L'anti-larsen qui ne sonne pas<br><span class="accent">comme un anti-larsen.</span></h1>
+          <p class="hero-sub">FeedZero détecte et supprime le feedback acoustique en temps réel grâce à une intelligence artificielle de détection et de décision, afin de préserver la clarté et la musicalité du signal en live.</p>
           <div class="hero-actions">
-            <a href="download.html" class="btn btn-primary btn-lg">Télécharger FeedZero</a>
-            <a href="docs/" class="btn btn-outline btn-lg">Documentation</a>
+            <a href="#about" class="btn btn-primary btn-lg">Découvrir FeedZero</a>
+            <a href="docs/" class="btn btn-outline btn-lg">Voir la documentation</a>
+          </div>
+        </div>
+        <img src="../assets/img/ui-fullscreen-preview.svg" alt="Interface FeedZero — Spectrum Analyzer et Main Controls" class="hero-corner-logo" loading="eager">
+      </div>
+    </section>
+
+    <!-- Interface logicielle -->
+    <section class="section interface-showcase" id="about">
+      <div class="container">
+        <div class="interface-layout">
+          <div class="interface-copy">
+            <div class="interface-brand">
+              <img src="../assets/img/feedzero-logo.svg" alt="Logo FeedZero" class="interface-logo">
+              <div>
+                <h2>Modele adaptatif et calibration guidee</h2>
+              </div>
+            </div>
+            <p class="interface-lead">Une interface claire pour couvrir les etapes essentielles: collecte IR, creation du dataset, entrainement du modele, puis calibration finale.</p>
+            <div class="interface-points">
+              <span class="interface-point">Collecte IR rapide</span>
+              <span class="interface-point">Dataset signal / larsen</span>
+              <span class="interface-point">Entrainement par grille</span>
+              <span class="interface-point">Calibration anti-faux positifs</span>
+              <span class="interface-point">F1 score et metriques visibles</span>
+            </div>
+          </div>
+          <figure class="interface-figure">
+            <img src="../assets/img/ui-training-preview.svg" alt="Capture de l'interface FeedZero: collecte IR, dataset, entrainement et calibration" loading="lazy">
+            <figcaption>Module Model Training.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technologie -->
+    <section class="section" id="technologie">
+      <div class="container">
+        <div class="section-header">
+          <h2>Technologie : Le moteur FeedZero</h2>
+          <p>L'Intelligence du Signal au service du Live</p>
+        </div>
+        <p style="color:var(--text-muted);font-size:1.02rem;max-width:860px;">Plutot qu'une IA "boite noire" imprevisible et gourmande en ressources, FeedZero utilise un Moteur DSP Adaptatif de haute precision. Cette approche garantit une latence ultra-faible (inferieure a 2 ms) et une transparence sonore totale.</p>
+        <div class="cards-grid" style="margin-top:var(--sp-xl);">
+          <div class="card">
+            <h3>Analyse Spectrale Temps-Reel (FFT)</h3>
+            <p>FeedZero decompose le signal entrant en milliers de bandes de frequences pour identifier instantanement les pics anormaux.</p>
+          </div>
+          <div class="card">
+            <h3>Algorithme de Persistance Intelligente</h3>
+            <p>Le moteur distingue la musique et la voix des veritables larsens en analysant la stabilite et la croissance energetique de chaque frequence sur le temps long.</p>
+          </div>
+          <div class="card">
+            <h3>Filtrage Adaptatif par Notches</h3>
+            <p>Contrairement a un egaliseur fixe, FeedZero deploie des filtres dynamiques "notches" d'une precision chirurgicale, en supprimant uniquement la frequence responsable du sifflement sans denaturer le timbre.</p>
+          </div>
+          <div class="card">
+            <h3>Calibration Farina (Auto-Setup)</h3>
+            <p>Avec des balayages sinusoidaux (sweeps), FeedZero cartographie l'acoustique de votre retour (wedge) et de votre micro pour anticiper les zones de resonance avant meme le premier larsen.</p>
           </div>
         </div>
       </div>
@@ -80,7 +138,7 @@
     </section>
 
     <!-- Trois modes -->
-    <section class="section">
+    <section class="section" id="modes">
       <div class="container">
         <div class="section-header">
           <h2>Trois modes, un seul objectif</h2>
@@ -110,7 +168,7 @@
     </section>
 
     <!-- Auto-Setup -->
-    <section class="section">
+    <section class="section" id="setup">
       <div class="container">
         <div class="section-header">
           <h2>Auto-Setup</h2>
@@ -127,23 +185,17 @@
     </section>
 
     <!-- Routing flexible -->
-    <section class="section">
+    <section class="section" id="routing">
       <div class="container">
         <div class="section-header">
           <h2>Routing flexible</h2>
         </div>
-        <div class="cards-grid cards-grid-3">
+        <div class="cards-grid">
 
           <div class="card">
             <div class="card-icon card-icon-cyan">🖥️</div>
             <h3>Standalone Windows</h3>
             <p>IN → FeedZero → OUT via ASIO/WDM. Plug-and-play avec votre interface audio existante.</p>
-          </div>
-
-          <div class="card">
-            <div class="card-icon card-icon-cyan">🌐</div>
-            <h3>Insert Dante</h3>
-            <p>Rx 1-2 → FeedZero → Tx 1-2. Aucune modification du réseau Dante nécessaire.</p>
           </div>
 
           <div class="card">
@@ -156,102 +208,13 @@
       </div>
     </section>
 
-    <!-- Pour qui -->
-    <section class="section">
-      <div class="container">
-        <div class="section-header">
-          <h2>Pour qui</h2>
-        </div>
-        <div class="targets-grid">
-          <div class="target-item"><span class="ti-icon">🎤</span> Ingénieurs son live</div>
-          <div class="target-item"><span class="ti-icon">🔧</span> Techniciens scène</div>
-          <div class="target-item"><span class="ti-icon">🎧</span> Ingénieurs de retours</div>
-          <div class="target-item"><span class="ti-icon">⛪</span> Équipes son d'église</div>
-          <div class="target-item"><span class="ti-icon">🎙️</span> Conférences et événements corporate</div>
-          <div class="target-item"><span class="ti-icon">📡</span> Streamers et podcasters</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ -->
-    <section class="section">
-      <div class="container">
-        <div class="section-header">
-          <h2>Questions fréquentes</h2>
-        </div>
-        <div class="faq-list">
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              FeedZero remplace-t-il un égaliseur paramétrique ?
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>Non. FeedZero est un outil dédié anti-larsen. Il complète votre chaîne, il ne la remplace pas.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              Le mode KILL colore-t-il le son ?
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>Oui, potentiellement. KILL priorise l'arrêt du larsen sur la neutralité. En mode Stage Lock, l'impact est minimal.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              Fonctionne-t-il avec n'importe quel système Dante ?
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>Oui, en tant qu'insert Dante standard (Rx → FeedZero → Tx). Compatible avec tout réseau Dante.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              Quelle latence ajoute FeedZero ?
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>Dépend du buffer et du routing. Consultez la <a href="docs/routing.html">doc Routing</a> pour les valeurs typiques.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              Puis-je utiliser FeedZero en stéréo sur un retour stéréo ?
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>Oui. Le mode Stereo→Stereo détecte le larsen sur le MID (L+R)/2 et applique les mêmes notches sur L et R.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              Y a-t-il une version Mac ou Linux ?
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>Pas pour l'instant. FeedZero est disponible en application Windows et plugin DAW (VST3/AAX).</p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
     <!-- CTA -->
     <section class="cta-section">
       <div class="container">
-        <h2>Prêt à éliminer le larsen ?</h2>
-        <p>Téléchargez FeedZero v1. Release : 2026-03-31.</p>
+        <h2>Passez a un controle anti-larsen plus propre</h2>
+        <p>Decouvrez le produit en detail ou prenez contact avec notre equipe.</p>
         <div class="cta-actions">
-          <a href="download.html" class="btn btn-primary btn-lg">Télécharger</a>
+          <a href="contact.html" class="btn btn-primary btn-lg">Parler a l'equipe</a>
           <a href="docs/" class="btn btn-outline btn-lg">Consulter la doc</a>
         </div>
       </div>
@@ -264,15 +227,14 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <a href="/fr/" class="nav-logo">
-            <div class="nav-logo-mark">FZ</div>
-            FeedZero
+            <img src="../assets/img/feedzero-logo.svg" alt="Logo FeedZero" class="footer-brand-logo" loading="lazy">
           </a>
-          <p>Anti-larsen temps réel pour la scène et le studio.</p>
+          <p>L'anti-larsen qui ne sonne pas comme un anti-larsen</p>
         </div>
         <div>
           <p class="footer-heading">Produit</p>
           <ul class="footer-links">
-            <li><a href="download.html">Télécharger</a></li>
+            <li><a href="#about">A propos</a></li>
             <li><a href="license.html">Licence</a></li>
             <li><a href="docs/">Documentation</a></li>
           </ul>
