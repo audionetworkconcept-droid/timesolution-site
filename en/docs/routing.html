@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Routing – FeedZero Documentation</title>
+  <meta name="description" content="FeedZero routing modes: Standalone Windows, Dante insert, DAW plugin. Channel modes explained.">
+  <meta property="og:title" content="Routing – FeedZero Documentation">
+  <meta property="og:description" content="FeedZero routing modes: Standalone Windows, Dante insert, DAW plugin. Channel modes explained.">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+  <nav class="site-nav">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="/en/" class="nav-logo">
+          <div class="nav-logo-mark">FZ</div>
+          FeedZero
+        </a>
+        <ul class="nav-links">
+          <li><a href="../download.html">Download</a></li>
+          <li><a href="index.html">Docs</a></li>
+          <li><a href="../license.html">License</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-lang nav-desktop">
+          <a href="/fr/docs/routing.html" data-lang="fr">FR</a>
+          <a href="/en/docs/routing.html" data-lang="en" class="lang-active">EN</a>
+        </div>
+        <button class="nav-hamburger" aria-label="Menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="nav-mobile">
+      <a href="../download.html">Download</a>
+      <a href="index.html">Docs</a>
+      <a href="../license.html">License</a>
+      <a href="../contact.html">Contact</a>
+      <div class="nav-lang">
+        <a href="/fr/docs/routing.html" data-lang="fr">FR</a>
+        <a href="/en/docs/routing.html" data-lang="en">EN</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="doc-layout">
+
+          <nav class="doc-sidebar">
+            <p class="doc-sidebar-title">Documentation</p>
+            <ul class="doc-sidebar-nav">
+              <li><a href="index.html">Overview</a></li>
+              <li><a href="getting-started.html">Getting Started</a></li>
+              <li><a href="stage-lock.html">Stage Lock</a></li>
+              <li><a href="auto-setup.html">Auto-Setup</a></li>
+              <li><a href="routing.html">Routing</a></li>
+              <li><a href="parameters.html">Parameters</a></li>
+              <li><a href="troubleshooting.html">Troubleshooting</a></li>
+            </ul>
+          </nav>
+
+          <div class="doc-content">
+
+            <nav class="doc-breadcrumb">
+              <a href="index.html">Docs</a>
+              <span>/</span>
+              <span>Routing</span>
+            </nav>
+
+            <h1>Routing</h1>
+
+            <!-- Standalone -->
+            <h2>Standalone Windows Mode</h2>
+            <div class="routing-diagram" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:var(--sp-lg);margin:var(--sp-md) 0;font-family:monospace;color:var(--accent);text-align:center;letter-spacing:0.03em;">
+              [Audio Interface] → [ASIO/WDM Driver] → [FeedZero] → [Speakers/Wedges]
+            </div>
+            <p style="color:var(--text-muted);">Typical latency: depends on ASIO buffer (typically 2–8 ms at 256 samples / 48 kHz).</p>
+
+            <!-- Dante -->
+            <h2>Dante Insert Mode</h2>
+            <div class="routing-diagram" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:var(--sp-lg);margin:var(--sp-md) 0;font-family:monospace;color:var(--accent);text-align:center;letter-spacing:0.03em;">
+              [Dante Rx 1-2] → [FeedZero] → [Dante Tx 1-2]
+            </div>
+            <p style="color:var(--text-muted);">No Dante network modification required. Compatible with any standard Dante device.</p>
+
+            <!-- DAW Plugin -->
+            <h2>DAW Plugin Mode</h2>
+            <p style="color:var(--text-muted);">Insert FeedZero on a track or bus in your DAW.</p>
+            <ul style="color:var(--text-muted);display:flex;flex-direction:column;gap:var(--sp-xs);padding-left:var(--sp-xl);margin-top:var(--sp-sm);">
+              <li>VST3: Reaper, Nuendo, Studio One, Cubase</li>
+              <li>AAX: Pro Tools 2023+</li>
+            </ul>
+            <p style="color:var(--text-muted);margin-top:var(--sp-md);">Latency: none (zero-latency mode if available in your DAW).</p>
+
+            <!-- Channel Mode -->
+            <h2>Channel Mode</h2>
+            <div style="display:flex;flex-direction:column;gap:var(--sp-md);margin-top:var(--sp-md);">
+              <div class="card" style="padding:var(--sp-lg);">
+                <strong style="color:var(--text-base);">Stereo→Stereo (linked)</strong>
+                <p style="color:var(--text-muted);margin-top:var(--sp-xs);">Feedback detection on MID = (L+R)/2. Same notches applied to L and R. For stereo monitors.</p>
+              </div>
+              <div class="card" style="padding:var(--sp-lg);">
+                <strong style="color:var(--text-base);">Mono→Stereo</strong>
+                <p style="color:var(--text-muted);margin-top:var(--sp-xs);">Mono input, stereo output. Useful for certain monitoring configurations.</p>
+              </div>
+              <div class="card" style="padding:var(--sp-lg);">
+                <strong style="color:var(--text-base);">Mono→Mono</strong>
+                <p style="color:var(--text-muted);margin-top:var(--sp-xs);">Simplest mode. One input, one output. For classic mono wedges.</p>
+              </div>
+            </div>
+
+            <div class="alert alert-tip" style="margin-top:var(--sp-xl);">
+              <div class="alert-icon">💡</div>
+              <div class="alert-body">
+                <p>For minimum latency in standalone mode, use an ASIO driver with 64 or 128 sample buffer.</p>
+              </div>
+            </div>
+
+            <!-- Doc nav footer -->
+            <div class="doc-nav-footer">
+              <a href="auto-setup.html" class="doc-nav-prev">
+                <span class="doc-nav-label">Previous</span>
+                <span class="doc-nav-title">← Auto-Setup</span>
+              </a>
+              <a href="parameters.html" class="doc-nav-next">
+                <span class="doc-nav-label">Next</span>
+                <span class="doc-nav-title">Parameters →</span>
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/en/" class="nav-logo">
+            <div class="nav-logo-mark">FZ</div>
+            FeedZero
+          </a>
+          <p>Real-time anti-feedback for stage and studio.</p>
+        </div>
+        <div>
+          <p class="footer-heading">Product</p>
+          <ul class="footer-links">
+            <li><a href="../download.html">Download</a></li>
+            <li><a href="../license.html">License</a></li>
+            <li><a href="index.html">Documentation</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-heading">Support</p>
+          <ul class="footer-links">
+            <li><a href="../contact.html">Contact</a></li>
+            <li><a href="../privacy.html">Privacy</a></li>
+            <li><a href="mailto:contact@audiosn.com">contact@audiosn.com</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-heading">Language</p>
+          <div class="nav-lang footer-lang">
+            <a href="/fr/docs/routing.html" data-lang="fr">FR</a>
+            <a href="/en/docs/routing.html" data-lang="en">EN</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span class="footer-copyright">© 2024 Audio Solutions Network. All rights reserved.</span>
+        <a href="../privacy.html" style="color:var(--text-dim);font-size:0.82rem;">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../assets/js/main.js"></script>
+</body>
+</html>
