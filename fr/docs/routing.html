@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Routing – Documentation FeedZero</title>
+  <meta name="description" content="Routing FeedZero : standalone Windows, insert Dante, plugin DAW. Channel modes et latences typiques.">
+  <meta property="og:title" content="Routing – Documentation FeedZero">
+  <meta property="og:description" content="Routing FeedZero : standalone Windows, insert Dante, plugin DAW. Channel modes et latences typiques.">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+  <nav class="site-nav">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="/fr/" class="nav-logo">
+          <div class="nav-logo-mark">FZ</div>
+          FeedZero
+        </a>
+        <ul class="nav-links">
+          <li><a href="../download.html">Télécharger</a></li>
+          <li><a href="index.html">Docs</a></li>
+          <li><a href="../license.html">Licence</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-lang nav-desktop">
+          <a href="/fr/docs/routing.html" data-lang="fr" class="lang-active">FR</a>
+          <a href="/en/docs/routing.html" data-lang="en">EN</a>
+        </div>
+        <button class="nav-hamburger" aria-label="Menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="nav-mobile">
+      <a href="../download.html">Télécharger</a>
+      <a href="index.html">Docs</a>
+      <a href="../license.html">Licence</a>
+      <a href="../contact.html">Contact</a>
+      <div class="nav-lang">
+        <a href="/fr/docs/routing.html" data-lang="fr">FR</a>
+        <a href="/en/docs/routing.html" data-lang="en">EN</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="doc-layout">
+
+          <nav class="doc-sidebar">
+            <p class="doc-sidebar-title">Documentation</p>
+            <ul class="doc-sidebar-nav">
+              <li><a href="index.html">Vue d'ensemble</a></li>
+              <li><a href="getting-started.html">Prise en main</a></li>
+              <li><a href="stage-lock.html">Stage Lock</a></li>
+              <li><a href="auto-setup.html">Auto-Setup</a></li>
+              <li><a href="routing.html">Routing</a></li>
+              <li><a href="parameters.html">Paramètres</a></li>
+              <li><a href="troubleshooting.html">Dépannage</a></li>
+            </ul>
+          </nav>
+
+          <div class="doc-content">
+
+            <nav class="doc-breadcrumb">
+              <a href="index.html">Docs</a>
+              <span>/</span>
+              <span>Routing</span>
+            </nav>
+
+            <h1>Routing</h1>
+
+            <h2>Mode Standalone Windows</h2>
+            <p>FeedZero s'insère directement dans la chaîne audio via les drivers ASIO ou WDM de votre interface. Aucun DAW requis.</p>
+            <div class="routing-diagram">
+              <div class="node node-cyan">Interface audio</div>
+              <div class="arrow">→</div>
+              <div class="node">Driver ASIO/WDM</div>
+              <div class="arrow">→</div>
+              <div class="node node-cyan">FeedZero</div>
+              <div class="arrow">→</div>
+              <div class="node">Enceintes / Wedges</div>
+            </div>
+            <p style="color:var(--text-muted);margin-top:var(--sp-md);">Latence typique : dépend du buffer ASIO (typiquement 2–8 ms à 256 samples / 48 kHz).</p>
+
+            <h2>Mode Insert Dante</h2>
+            <p>FeedZero s'insère comme un device Dante standard sur le réseau. Aucune modification d'infrastructure nécessaire.</p>
+            <div class="routing-diagram">
+              <div class="node node-cyan">Dante Rx 1-2</div>
+              <div class="arrow">→</div>
+              <div class="node node-cyan">FeedZero</div>
+              <div class="arrow">→</div>
+              <div class="node node-cyan">Dante Tx 1-2</div>
+            </div>
+            <p style="color:var(--text-muted);margin-top:var(--sp-md);">Aucune modification du réseau Dante nécessaire. Compatible avec tout périphérique Dante standard.</p>
+
+            <h2>Mode Plugin DAW</h2>
+            <p>Insérez FeedZero sur une piste ou un bus dans votre DAW.</p>
+            <ul style="color:var(--text-muted);display:flex;flex-direction:column;gap:var(--sp-xs);padding-left:var(--sp-xl);margin-top:var(--sp-md);">
+              <li>VST3 — Reaper, Nuendo, Studio One, Cubase</li>
+              <li>AAX — Pro Tools 2023+</li>
+            </ul>
+            <p style="color:var(--text-muted);margin-top:var(--sp-md);">Latence : nulle (mode zero-latency si disponible dans votre DAW).</p>
+
+            <h2>Channel Mode</h2>
+
+            <div style="display:flex;flex-direction:column;gap:var(--sp-md);margin-top:var(--sp-md);">
+
+              <div class="card">
+                <h3>Stereo → Stereo</h3>
+                <p>Détection du larsen sur le MID = (L+R)/2. Les mêmes notches appliqués sur L et R. Pour retours stéréo.</p>
+              </div>
+
+              <div class="card">
+                <h3>Mono → Stereo</h3>
+                <p>Entrée mono, sortie stéréo. Utile pour certaines configurations de monitoring avec double wedge ou in-ears.</p>
+              </div>
+
+              <div class="card">
+                <h3>Mono → Mono</h3>
+                <p>Le plus simple. Une entrée, une sortie. Pour wedges mono classiques. Recommandé pour débuter.</p>
+              </div>
+
+            </div>
+
+            <div class="alert alert-tip" style="margin-top:var(--sp-xl);">
+              <div class="alert-icon">💡</div>
+              <div class="alert-body">
+                <p>Pour une latence minimale en standalone, utilisez un driver ASIO avec un buffer de 64 ou 128 samples.</p>
+              </div>
+            </div>
+
+            <!-- Doc nav footer -->
+            <div class="doc-nav-footer">
+              <a href="auto-setup.html" class="doc-nav-prev">
+                <span class="doc-nav-label">Précédent</span>
+                <span class="doc-nav-title">← Auto-Setup</span>
+              </a>
+              <a href="parameters.html" class="doc-nav-next">
+                <span class="doc-nav-label">Suivant</span>
+                <span class="doc-nav-title">Paramètres →</span>
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/fr/" class="nav-logo">
+            <div class="nav-logo-mark">FZ</div>
+            FeedZero
+          </a>
+          <p>Anti-larsen temps réel pour la scène et le studio.</p>
+        </div>
+        <div>
+          <p class="footer-heading">Produit</p>
+          <ul class="footer-links">
+            <li><a href="../download.html">Télécharger</a></li>
+            <li><a href="../license.html">Licence</a></li>
+            <li><a href="index.html">Documentation</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-heading">Support</p>
+          <ul class="footer-links">
+            <li><a href="../contact.html">Contact</a></li>
+            <li><a href="../privacy.html">Confidentialité</a></li>
+            <li><a href="mailto:contact@audiosn.com">contact@audiosn.com</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-heading">Langue</p>
+          <div class="nav-lang footer-lang">
+            <a href="/fr/" data-lang="fr">FR</a>
+            <a href="/en/" data-lang="en">EN</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span class="footer-copyright">© 2024 Audio Solutions Network. Tous droits réservés.</span>
+        <a href="../privacy.html" style="color:var(--text-dim);font-size:0.82rem;">Politique de confidentialité</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../assets/js/main.js"></script>
+</body>
+</html>
