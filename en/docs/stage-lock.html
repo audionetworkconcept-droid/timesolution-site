@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stage Lock – FeedZero Documentation</title>
+  <meta name="description" content="Stage Lock mode in FeedZero. Stable, adaptive suppression with maximum transparency.">
+  <meta property="og:title" content="Stage Lock – FeedZero Documentation">
+  <meta property="og:description" content="Stage Lock mode in FeedZero. Stable, adaptive suppression with maximum transparency.">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+  <nav class="site-nav">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="/en/" class="nav-logo">
+          <div class="nav-logo-mark">FZ</div>
+          FeedZero
+        </a>
+        <ul class="nav-links">
+          <li><a href="../download.html">Download</a></li>
+          <li><a href="index.html">Docs</a></li>
+          <li><a href="../license.html">License</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-lang nav-desktop">
+          <a href="/fr/docs/stage-lock.html" data-lang="fr">FR</a>
+          <a href="/en/docs/stage-lock.html" data-lang="en" class="lang-active">EN</a>
+        </div>
+        <button class="nav-hamburger" aria-label="Menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="nav-mobile">
+      <a href="../download.html">Download</a>
+      <a href="index.html">Docs</a>
+      <a href="../license.html">License</a>
+      <a href="../contact.html">Contact</a>
+      <div class="nav-lang">
+        <a href="/fr/docs/stage-lock.html" data-lang="fr">FR</a>
+        <a href="/en/docs/stage-lock.html" data-lang="en">EN</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="doc-layout">
+
+          <nav class="doc-sidebar">
+            <p class="doc-sidebar-title">Documentation</p>
+            <ul class="doc-sidebar-nav">
+              <li><a href="index.html">Overview</a></li>
+              <li><a href="getting-started.html">Getting Started</a></li>
+              <li><a href="stage-lock.html">Stage Lock</a></li>
+              <li><a href="auto-setup.html">Auto-Setup</a></li>
+              <li><a href="routing.html">Routing</a></li>
+              <li><a href="parameters.html">Parameters</a></li>
+              <li><a href="troubleshooting.html">Troubleshooting</a></li>
+            </ul>
+          </nav>
+
+          <div class="doc-content">
+
+            <nav class="doc-breadcrumb">
+              <a href="index.html">Docs</a>
+              <span>/</span>
+              <span>Stage Lock</span>
+            </nav>
+
+            <h1>Stage Lock</h1>
+
+            <!-- What is Stage Lock -->
+            <h2>What is Stage Lock?</h2>
+            <p style="color:var(--text-muted);">A stable, adaptive suppression mode. FeedZero places notches progressively as feedback risk increases. Sound transparency is the priority. Ideal for long sets and controlled situations.</p>
+
+            <!-- Behavior -->
+            <h2>Behavior</h2>
+            <ul style="color:var(--text-muted);display:flex;flex-direction:column;gap:var(--sp-sm);padding-left:var(--sp-xl);">
+              <li>Feedback detection via real-time spectral analysis</li>
+              <li>Narrow precise notches placed at problem frequencies</li>
+              <li>Progressive notch removal as risk decreases</li>
+              <li>No mute, no service interruption</li>
+            </ul>
+
+            <!-- When to Use -->
+            <h2>When to Use It</h2>
+            <ul style="color:var(--text-muted);display:flex;flex-direction:column;gap:var(--sp-sm);padding-left:var(--sp-xl);">
+              <li>Concerts, conferences, events with extended speech sections</li>
+              <li>Situations where sound coloring is unacceptable</li>
+              <li>When the situation is under control and you can manage gradually</li>
+            </ul>
+
+            <!-- Limitations -->
+            <h2>Limitations</h2>
+            <div class="alert alert-warning">
+              <div class="alert-icon">⚠️</div>
+              <div class="alert-body">
+                <p>Stage Lock won't stop violent feedback instantly. For emergencies, use KILL or PANIC.</p>
+              </div>
+            </div>
+            <p style="color:var(--text-muted);margin-top:var(--sp-md);">Stage Lock is optimized for stability. It may allow a few milliseconds of pre-feedback before acting.</p>
+
+            <!-- Versus KILL -->
+            <h2>Versus KILL</h2>
+            <div class="cards-grid cards-grid-3" style="margin-top:var(--sp-md);">
+              <div class="card" style="border-color:var(--success);padding:var(--sp-md);">
+                <div class="mode-badge mode-badge-success" style="margin-bottom:var(--sp-sm);">Stage Lock</div>
+                <p style="color:var(--text-muted);font-size:0.9rem;">Stability + transparency</p>
+              </div>
+              <div class="card" style="border-color:var(--warning);padding:var(--sp-md);">
+                <div class="mode-badge mode-badge-warning" style="margin-bottom:var(--sp-sm);">KILL</div>
+                <p style="color:var(--text-muted);font-size:0.9rem;">Reactivity + effectiveness</p>
+              </div>
+              <div class="card" style="border-color:var(--danger);padding:var(--sp-md);">
+                <div class="mode-badge mode-badge-danger" style="margin-bottom:var(--sp-sm);">PANIC</div>
+                <p style="color:var(--text-muted);font-size:0.9rem;">Immediate mute</p>
+              </div>
+            </div>
+
+            <!-- Doc nav footer -->
+            <div class="doc-nav-footer">
+              <a href="getting-started.html" class="doc-nav-prev">
+                <span class="doc-nav-label">Previous</span>
+                <span class="doc-nav-title">← Getting Started</span>
+              </a>
+              <a href="auto-setup.html" class="doc-nav-next">
+                <span class="doc-nav-label">Next</span>
+                <span class="doc-nav-title">Auto-Setup →</span>
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/en/" class="nav-logo">
+            <div class="nav-logo-mark">FZ</div>
+            FeedZero
+          </a>
+          <p>Real-time anti-feedback for stage and studio.</p>
+        </div>
+        <div>
+          <p class="footer-heading">Product</p>
+          <ul class="footer-links">
+            <li><a href="../download.html">Download</a></li>
+            <li><a href="../license.html">License</a></li>
+            <li><a href="index.html">Documentation</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-heading">Support</p>
+          <ul class="footer-links">
+            <li><a href="../contact.html">Contact</a></li>
+            <li><a href="../privacy.html">Privacy</a></li>
+            <li><a href="mailto:contact@audiosn.com">contact@audiosn.com</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-heading">Language</p>
+          <div class="nav-lang footer-lang">
+            <a href="/fr/docs/stage-lock.html" data-lang="fr">FR</a>
+            <a href="/en/docs/stage-lock.html" data-lang="en">EN</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span class="footer-copyright">© 2024 Audio Solutions Network. All rights reserved.</span>
+        <a href="../privacy.html" style="color:var(--text-dim);font-size:0.82rem;">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../assets/js/main.js"></script>
+</body>
+</html>

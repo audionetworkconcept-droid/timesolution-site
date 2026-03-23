@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dépannage – Documentation FeedZero</title>
+  <meta name="description" content="Guide de dépannage FeedZero. Interface audio non détectée, larsen persistant, latence, licence, artefacts, bouton PANIC.">
+  <meta property="og:title" content="Dépannage – Documentation FeedZero">
+  <meta property="og:description" content="Guide de dépannage FeedZero. Interface audio non détectée, larsen persistant, latence, licence, artefacts, bouton PANIC.">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+  <nav class="site-nav">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="/fr/" class="nav-logo">
+          <div class="nav-logo-mark">FZ</div>
+          FeedZero
+        </a>
+        <ul class="nav-links">
+          <li><a href="../download.html">Télécharger</a></li>
+          <li><a href="index.html">Docs</a></li>
+          <li><a href="../license.html">Licence</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-lang nav-desktop">
+          <a href="/fr/docs/troubleshooting.html" data-lang="fr" class="lang-active">FR</a>
+          <a href="/en/docs/troubleshooting.html" data-lang="en">EN</a>
+        </div>
+        <button class="nav-hamburger" aria-label="Menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="nav-mobile">
+      <a href="../download.html">Télécharger</a>
+      <a href="index.html">Docs</a>
+      <a href="../license.html">Licence</a>
+      <a href="../contact.html">Contact</a>
+      <div class="nav-lang">
+        <a href="/fr/docs/troubleshooting.html" data-lang="fr">FR</a>
+        <a href="/en/docs/troubleshooting.html" data-lang="en">EN</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="doc-layout">
+
+          <nav class="doc-sidebar">
+            <p class="doc-sidebar-title">Documentation</p>
+            <ul class="doc-sidebar-nav">
+              <li><a href="index.html">Vue d'ensemble</a></li>
+              <li><a href="getting-started.html">Prise en main</a></li>
+              <li><a href="stage-lock.html">Stage Lock</a></li>
+              <li><a href="auto-setup.html">Auto-Setup</a></li>
+              <li><a href="routing.html">Routing</a></li>
+              <li><a href="parameters.html">Paramètres</a></li>
+              <li><a href="troubleshooting.html">Dépannage</a></li>
+            </ul>
+          </nav>
+
+          <div class="doc-content">
+
+            <nav class="doc-breadcrumb">
+              <a href="index.html">Docs</a>
+              <span>/</span>
+              <span>Dépannage</span>
+            </nav>
+
+            <h1>Dépannage</h1>
+
+            <!-- 1 -->
+            <h2>FeedZero ne détecte pas mon interface audio</h2>
+            <ul style="color:var(--text-muted);display:flex;flex-direction:column;gap:var(--sp-sm);padding-left:var(--sp-xl);">
+              <li>Vérifiez que le driver ASIO est installé et à jour</li>
+              <li>En mode WDM, certaines interfaces nécessitent un redémarrage</li>
+              <li>Consultez les logs de session (Menu → Logs)</li>
+              <li>Essayez de relancer FeedZero en administrateur</li>
+            </ul>
+
+            <!-- 2 -->
+            <h2>Le larsen continue malgré FeedZero</h2>
+            <ul style="color:var(--text-muted);display:flex;flex-direction:column;gap:var(--sp-sm);padding-left:var(--sp-xl);">
+              <li>Vérifiez le routing — FeedZero est-il bien dans la chaîne de signal ?</li>
+              <li>Augmentez la Sensitivity</li>
+              <li>Passez en mode KILL si urgent</li>
+              <li>Le gain before feedback est-il trop élevé ?</li>
+            </ul>
+            <div class="alert alert-tip" style="margin-top:var(--sp-md);">
+              <div class="alert-icon">💡</div>
+              <div class="alert-body">
+                <p>Si le larsen persiste en mode KILL, le problème est peut-être en amont du routing FeedZero.</p>
+              </div>
+            </div>
+
+            <!-- 3 -->
+            <h2>FeedZero introduit de la latence perceptible</h2>
+            <ul style="color:var(--text-muted);display:flex;flex-direction:column;gap:var(--sp-sm);padding-left:var(--sp-xl);">
+              <li>Réduisez le buffer ASIO (64 ou 128 samples)</li>
+              <li>En mode Plugin DAW, activez le mode zero-latency</li>
+              <li>En mode Dante, vérifiez la configuration réseau</li>
+            </ul>
+
+            <!-- 4 -->
+            <h2>Ma licence n'est pas reconnue</h2>
+            <ul style="color:var(--text-muted);display:flex;flex-direction:column;gap:var(--sp-sm);padding-left:var(--sp-xl);">
+              <li>Vérifiez votre connexion internet (première activation)</li>
+              <li>Vérifiez que vous utilisez la bonne clé</li>
+              <li>Contactez <a href="mailto:contact@audiosn.com">contact@audiosn.com</a> avec votre clé de licence</li>
+            </ul>
+            <div class="alert alert-tip" style="margin-top:var(--sp-md);">
+              <div class="alert-icon">💡</div>
+              <div class="alert-body">
+                <p>Activation hors-ligne disponible sur demande.</p>
+              </div>
+            </div>
+
+            <!-- 5 -->
+            <h2>Bruit ou artefacts après activation d'un notch</h2>
+            <ul style="color:var(--text-muted);display:flex;flex-direction:column;gap:var(--sp-sm);padding-left:var(--sp-xl);">
+              <li>Réduisez Suppression Strength</li>
+              <li>Réduisez Max Notches</li>
+              <li>Relancez Auto-Setup pour recalibrer</li>
+              <li>Passez à un Notch Width plus étroit (Q élevé)</li>
+            </ul>
+
+            <!-- 6 -->
+            <h2>Bouton PANIC ne répond pas</h2>
+            <div class="alert alert-danger">
+              <div class="alert-icon">⛔</div>
+              <div class="alert-body">
+                <p>Ne devrait jamais arriver. Si c'est le cas, contactez le support immédiatement : <a href="mailto:contact@audiosn.com">contact@audiosn.com</a></p>
+              </div>
+            </div>
+
+            <!-- CTA -->
+            <div style="margin-top:var(--sp-2xl);text-align:center;">
+              <a href="../contact.html" class="btn btn-outline">Contacter le support</a>
+            </div>
+
+            <!-- Doc nav footer -->
+            <div class="doc-nav-footer">
+              <a href="parameters.html" class="doc-nav-prev">
+                <span class="doc-nav-label">Précédent</span>
+                <span class="doc-nav-title">← Paramètres</span>
+              </a>
+              <div></div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/fr/" class="nav-logo">
+            <div class="nav-logo-mark">FZ</div>
+            FeedZero
+          </a>
+          <p>Anti-larsen temps réel pour la scène et le studio.</p>
+        </div>
+        <div>
+          <p class="footer-heading">Produit</p>
+          <ul class="footer-links">
+            <li><a href="../download.html">Télécharger</a></li>
+            <li><a href="../license.html">Licence</a></li>
+            <li><a href="index.html">Documentation</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-heading">Support</p>
+          <ul class="footer-links">
+            <li><a href="../contact.html">Contact</a></li>
+            <li><a href="../privacy.html">Confidentialité</a></li>
+            <li><a href="mailto:contact@audiosn.com">contact@audiosn.com</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-heading">Langue</p>
+          <div class="nav-lang footer-lang">
+            <a href="/fr/" data-lang="fr">FR</a>
+            <a href="/en/" data-lang="en">EN</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span class="footer-copyright">© 2024 Audio Solutions Network. Tous droits réservés.</span>
+        <a href="../privacy.html" style="color:var(--text-dim);font-size:0.82rem;">Politique de confidentialité</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../assets/js/main.js"></script>
+</body>
+</html>

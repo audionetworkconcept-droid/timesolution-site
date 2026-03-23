@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prise en main – Documentation FeedZero</title>
+  <meta name="description" content="Guide de prise en main FeedZero. Installation, activation, premier lancement et premiers tests.">
+  <meta property="og:title" content="Prise en main – Documentation FeedZero">
+  <meta property="og:description" content="Guide de prise en main FeedZero. Installation, activation, premier lancement et premiers tests.">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+  <nav class="site-nav">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="/fr/" class="nav-logo">
+          <div class="nav-logo-mark">FZ</div>
+          FeedZero
+        </a>
+        <ul class="nav-links">
+          <li><a href="../download.html">Télécharger</a></li>
+          <li><a href="index.html">Docs</a></li>
+          <li><a href="../license.html">Licence</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-lang nav-desktop">
+          <a href="/fr/docs/getting-started.html" data-lang="fr" class="lang-active">FR</a>
+          <a href="/en/docs/getting-started.html" data-lang="en">EN</a>
+        </div>
+        <button class="nav-hamburger" aria-label="Menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="nav-mobile">
+      <a href="../download.html">Télécharger</a>
+      <a href="index.html">Docs</a>
+      <a href="../license.html">Licence</a>
+      <a href="../contact.html">Contact</a>
+      <div class="nav-lang">
+        <a href="/fr/docs/getting-started.html" data-lang="fr">FR</a>
+        <a href="/en/docs/getting-started.html" data-lang="en">EN</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="doc-layout">
+
+          <nav class="doc-sidebar">
+            <p class="doc-sidebar-title">Documentation</p>
+            <ul class="doc-sidebar-nav">
+              <li><a href="index.html">Vue d'ensemble</a></li>
+              <li><a href="getting-started.html">Prise en main</a></li>
+              <li><a href="stage-lock.html">Stage Lock</a></li>
+              <li><a href="auto-setup.html">Auto-Setup</a></li>
+              <li><a href="routing.html">Routing</a></li>
+              <li><a href="parameters.html">Paramètres</a></li>
+              <li><a href="troubleshooting.html">Dépannage</a></li>
+            </ul>
+          </nav>
+
+          <div class="doc-content">
+
+            <nav class="doc-breadcrumb">
+              <a href="index.html">Docs</a>
+              <span>/</span>
+              <span>Prise en main</span>
+            </nav>
+
+            <h1>Prise en main</h1>
+
+            <!-- Installation -->
+            <h2>Installation</h2>
+            <div class="alert alert-tip">
+              <div class="alert-icon">💡</div>
+              <div class="alert-body">
+                <p>Téléchargez l'installeur depuis la <a href="../download.html">page Télécharger</a>.</p>
+              </div>
+            </div>
+            <ol style="color:var(--text-muted);display:flex;flex-direction:column;gap:var(--sp-sm);margin-top:var(--sp-md);padding-left:var(--sp-xl);">
+              <li>Téléchargez l'installeur depuis <a href="../download.html">/fr/download</a></li>
+              <li>Lancez l'installeur en tant qu'administrateur (clic droit → Exécuter en tant qu'administrateur)</li>
+              <li>Suivez les étapes de l'assistant</li>
+              <li>Entrez votre clé de licence au premier lancement</li>
+            </ol>
+
+            <!-- Premier lancement -->
+            <h2>Premier lancement</h2>
+            <ol style="color:var(--text-muted);display:flex;flex-direction:column;gap:var(--sp-sm);padding-left:var(--sp-xl);">
+              <li>Sélectionnez votre interface audio dans les préférences</li>
+              <li>Choisissez le routing (Standalone / Dante / Plugin)</li>
+              <li>Définissez le mode de canal (Stereo→Stereo, Mono→Stereo, Mono→Mono)</li>
+              <li>Cliquez sur <strong>Démarrer le traitement</strong></li>
+            </ol>
+
+            <!-- Activation -->
+            <h2>Activation</h2>
+            <ul style="color:var(--text-muted);display:flex;flex-direction:column;gap:var(--sp-sm);padding-left:var(--sp-xl);">
+              <li>La licence est vérifiée au lancement.</li>
+              <li>Connexion internet requise pour la première activation.</li>
+              <li>Activation hors-ligne disponible sur demande : <a href="mailto:contact@audiosn.com">contact@audiosn.com</a></li>
+            </ul>
+            <div class="alert alert-warning" style="margin-top:var(--sp-lg);">
+              <div class="alert-icon">⚠️</div>
+              <div class="alert-body">
+                <p>Conservez votre clé de licence en lieu sûr. Ne la partagez pas.</p>
+              </div>
+            </div>
+
+            <!-- Premiers tests -->
+            <h2>Premiers tests</h2>
+            <ul style="color:var(--text-muted);display:flex;flex-direction:column;gap:var(--sp-sm);padding-left:var(--sp-xl);">
+              <li>Démarrez en mode <strong>Stage Lock</strong>.</li>
+              <li>Testez le gain before feedback avec votre rig normal.</li>
+              <li>Lancez Auto-Setup pour un profil de départ adapté à votre rig.</li>
+              <li>Ajustez les paramètres selon vos retours terrain.</li>
+            </ul>
+            <div class="alert alert-tip" style="margin-top:var(--sp-lg);">
+              <div class="alert-icon">💡</div>
+              <div class="alert-body">
+                <p>Testez toujours avant un événement réel. Les conditions acoustiques varient.</p>
+              </div>
+            </div>
+
+            <!-- Doc nav footer -->
+            <div class="doc-nav-footer">
+              <div></div>
+              <a href="stage-lock.html" class="doc-nav-next">
+                <span class="doc-nav-label">Suivant</span>
+                <span class="doc-nav-title">Stage Lock →</span>
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/fr/" class="nav-logo">
+            <div class="nav-logo-mark">FZ</div>
+            FeedZero
+          </a>
+          <p>Anti-larsen temps réel pour la scène et le studio.</p>
+        </div>
+        <div>
+          <p class="footer-heading">Produit</p>
+          <ul class="footer-links">
+            <li><a href="../download.html">Télécharger</a></li>
+            <li><a href="../license.html">Licence</a></li>
+            <li><a href="index.html">Documentation</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-heading">Support</p>
+          <ul class="footer-links">
+            <li><a href="../contact.html">Contact</a></li>
+            <li><a href="../privacy.html">Confidentialité</a></li>
+            <li><a href="mailto:contact@audiosn.com">contact@audiosn.com</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-heading">Langue</p>
+          <div class="nav-lang footer-lang">
+            <a href="/fr/" data-lang="fr">FR</a>
+            <a href="/en/" data-lang="en">EN</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span class="footer-copyright">© 2024 Audio Solutions Network. Tous droits réservés.</span>
+        <a href="../privacy.html" style="color:var(--text-dim);font-size:0.82rem;">Politique de confidentialité</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../assets/js/main.js"></script>
+</body>
+</html>

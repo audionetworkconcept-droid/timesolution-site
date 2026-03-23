@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parameters – FeedZero Documentation</title>
+  <meta name="description" content="Complete reference for FeedZero parameters. Suppression strength, sensitivity, notch width, presets and more.">
+  <meta property="og:title" content="Parameters – FeedZero Documentation">
+  <meta property="og:description" content="Complete reference for FeedZero parameters. Suppression strength, sensitivity, notch width, presets and more.">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+  <nav class="site-nav">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="/en/" class="nav-logo">
+          <div class="nav-logo-mark">FZ</div>
+          FeedZero
+        </a>
+        <ul class="nav-links">
+          <li><a href="../download.html">Download</a></li>
+          <li><a href="index.html">Docs</a></li>
+          <li><a href="../license.html">License</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-lang nav-desktop">
+          <a href="/fr/docs/parameters.html" data-lang="fr">FR</a>
+          <a href="/en/docs/parameters.html" data-lang="en" class="lang-active">EN</a>
+        </div>
+        <button class="nav-hamburger" aria-label="Menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="nav-mobile">
+      <a href="../download.html">Download</a>
+      <a href="index.html">Docs</a>
+      <a href="../license.html">License</a>
+      <a href="../contact.html">Contact</a>
+      <div class="nav-lang">
+        <a href="/fr/docs/parameters.html" data-lang="fr">FR</a>
+        <a href="/en/docs/parameters.html" data-lang="en">EN</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="doc-layout">
+
+          <nav class="doc-sidebar">
+            <p class="doc-sidebar-title">Documentation</p>
+            <ul class="doc-sidebar-nav">
+              <li><a href="index.html">Overview</a></li>
+              <li><a href="getting-started.html">Getting Started</a></li>
+              <li><a href="stage-lock.html">Stage Lock</a></li>
+              <li><a href="auto-setup.html">Auto-Setup</a></li>
+              <li><a href="routing.html">Routing</a></li>
+              <li><a href="parameters.html">Parameters</a></li>
+              <li><a href="troubleshooting.html">Troubleshooting</a></li>
+            </ul>
+          </nav>
+
+          <div class="doc-content">
+
+            <nav class="doc-breadcrumb">
+              <a href="index.html">Docs</a>
+              <span>/</span>
+              <span>Parameters</span>
+            </nav>
+
+            <h1>Parameters</h1>
+            <p style="color:var(--text-muted);margin-top:var(--sp-sm);margin-bottom:var(--sp-xl);">Complete reference for FeedZero parameters. All parameters are accessible from the main interface.</p>
+
+            <!-- Parameters Table -->
+            <div style="overflow-x:auto;">
+              <table class="params-table" style="width:100%;border-collapse:collapse;font-size:0.92rem;">
+                <thead>
+                  <tr style="border-bottom:2px solid var(--border);">
+                    <th style="text-align:left;padding:var(--sp-sm) var(--sp-md);color:var(--text-base);white-space:nowrap;">Parameter</th>
+                    <th style="text-align:left;padding:var(--sp-sm) var(--sp-md);color:var(--text-base);white-space:nowrap;">Range</th>
+                    <th style="text-align:left;padding:var(--sp-sm) var(--sp-md);color:var(--text-base);white-space:nowrap;">Default</th>
+                    <th style="text-align:left;padding:var(--sp-sm) var(--sp-md);color:var(--text-base);">Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr style="border-bottom:1px solid var(--border);">
+                    <td style="padding:var(--sp-sm) var(--sp-md);color:var(--accent);white-space:nowrap;">Suppression Strength</td>
+                    <td style="padding:var(--sp-sm) var(--sp-md);color:var(--text-muted);">0–100%</td>
+                    <td style="padding:var(--sp-sm) var(--sp-md);color:var(--text-muted);">60%</td>
+                    <td style="padding:var(--sp-sm) var(--sp-md);color:var(--text-muted);">Notch depth. 100% = max protection but potential sonic impact. 50–70% recommended in Stage Lock.</td>
+                  </tr>
+                  <tr style="border-bottom:1px solid var(--border);">
+                    <td style="padding:var(--sp-sm) var(--sp-md);color:var(--accent);white-space:nowrap;">Sensitivity</td>
+                    <td style="padding:var(--sp-sm) var(--sp-md);color:var(--text-muted);">0–100%</td>
+                    <td style="padding:var(--sp-sm) var(--sp-md);color:var(--text-muted);">50%</td>
+                    <td style="padding:var(--sp-sm) var(--sp-md);color:var(--text-muted);">Detection trigger threshold. Too high = feedback before action. Too low = false positives.</td>
+                  </tr>
+                  <tr style="border-bottom:1px solid var(--border);">
+                    <td style="padding:var(--sp-sm) var(--sp-md);color:var(--accent);white-space:nowrap;">Max Notches</td>
+                    <td style="padding:var(--sp-sm) var(--sp-md);color:var(--text-muted);">1–24</td>
+                    <td style="padding:var(--sp-sm) var(--sp-md);color:var(--text-muted);">8</td>
+                    <td style="padding:var(--sp-sm) var(--sp-md);color:var(--text-muted);">Maximum number of active notches simultaneously. 6–12 recommended depending on the room.</td>
+                  </tr>
+                  <tr style="border-bottom:1px solid var(--border);">
+                    <td style="padding:var(--sp-sm) var(--sp-md);color:var(--accent);white-space:nowrap;">Notch Width</td>
+                    <td style="padding:var(--sp-sm) var(--sp-md);color:var(--text-muted);">Narrow–Wide (Q 1–30)</td>
+                    <td style="padding:var(--sp-sm) var(--sp-md);color:var(--text-muted);">Medium</td>
+                    <td style="padding:var(--sp-sm) var(--sp-md);color:var(--text-muted);">Narrow (high Q) = precise. Wide = coarser but more robust.</td>
+                  </tr>
+                  <tr style="border-bottom:1px solid var(--border);">
+                    <td style="padding:var(--sp-sm) var(--sp-md);color:var(--accent);white-space:nowrap;">Channel Mode</td>
+                    <td style="padding:var(--sp-sm) var(--sp-md);color:var(--text-muted);">Stereo→Stereo / Mono→Stereo / Mono→Mono</td>
+                    <td style="padding:var(--sp-sm) var(--sp-md);color:var(--text-muted);">Auto</td>
+                    <td style="padding:var(--sp-sm) var(--sp-md);color:var(--text-muted);">Processing mode depending on routing.</td>
+                  </tr>
+                  <tr>
+                    <td style="padding:var(--sp-sm) var(--sp-md);color:var(--accent);white-space:nowrap;">Mode</td>
+                    <td style="padding:var(--sp-sm) var(--sp-md);color:var(--text-muted);">Stage Lock / KILL / PANIC</td>
+                    <td style="padding:var(--sp-sm) var(--sp-md);color:var(--text-muted);">Stage Lock</td>
+                    <td style="padding:var(--sp-sm) var(--sp-md);color:var(--text-muted);">Active suppression mode.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Presets -->
+            <h2 style="margin-top:var(--sp-xxl);">Presets</h2>
+            <div class="cards-grid cards-grid-3" style="margin-top:var(--sp-md);">
+              <div class="card" style="padding:var(--sp-lg);">
+                <div style="font-size:1.5rem;margin-bottom:var(--sp-sm);">🎤</div>
+                <strong style="color:var(--text-base);">Live</strong>
+                <p style="color:var(--text-muted);margin-top:var(--sp-xs);font-size:0.9rem;">Balanced for stage.</p>
+              </div>
+              <div class="card" style="padding:var(--sp-lg);">
+                <div style="font-size:1.5rem;margin-bottom:var(--sp-sm);">🎙️</div>
+                <strong style="color:var(--text-base);">Voice</strong>
+                <p style="color:var(--text-muted);margin-top:var(--sp-xs);font-size:0.9rem;">Optimized for speech and conferences.</p>
+              </div>
+              <div class="card" style="padding:var(--sp-lg);">
+                <div style="font-size:1.5rem;margin-bottom:var(--sp-sm);">🎸</div>
+                <strong style="color:var(--text-base);">Music</strong>
+                <p style="color:var(--text-muted);margin-top:var(--sp-xs);font-size:0.9rem;">Softer protection for instrumental.</p>
+              </div>
+            </div>
+            <div class="alert alert-tip" style="margin-top:var(--sp-lg);">
+              <div class="alert-icon">💡</div>
+              <div class="alert-body">
+                <p>Presets are starting points — adjust for your rig.</p>
+              </div>
+            </div>
+
+            <!-- Doc nav footer -->
+            <div class="doc-nav-footer">
+              <a href="routing.html" class="doc-nav-prev">
+                <span class="doc-nav-label">Previous</span>
+                <span class="doc-nav-title">← Routing</span>
+              </a>
+              <a href="troubleshooting.html" class="doc-nav-next">
+                <span class="doc-nav-label">Next</span>
+                <span class="doc-nav-title">Troubleshooting →</span>
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/en/" class="nav-logo">
+            <div class="nav-logo-mark">FZ</div>
+            FeedZero
+          </a>
+          <p>Real-time anti-feedback for stage and studio.</p>
+        </div>
+        <div>
+          <p class="footer-heading">Product</p>
+          <ul class="footer-links">
+            <li><a href="../download.html">Download</a></li>
+            <li><a href="../license.html">License</a></li>
+            <li><a href="index.html">Documentation</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-heading">Support</p>
+          <ul class="footer-links">
+            <li><a href="../contact.html">Contact</a></li>
+            <li><a href="../privacy.html">Privacy</a></li>
+            <li><a href="mailto:contact@audiosn.com">contact@audiosn.com</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-heading">Language</p>
+          <div class="nav-lang footer-lang">
+            <a href="/fr/docs/parameters.html" data-lang="fr">FR</a>
+            <a href="/en/docs/parameters.html" data-lang="en">EN</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span class="footer-copyright">© 2024 Audio Solutions Network. All rights reserved.</span>
+        <a href="../privacy.html" style="color:var(--text-dim);font-size:0.82rem;">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../assets/js/main.js"></script>
+</body>
+</html>

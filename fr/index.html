@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FeedZero – Anti-larsen temps réel pour la scène | Audio Solutions Network</title>
+  <meta name="description" content="FeedZero supprime le larsen en temps réel sur scène. Stage Lock, mode KILL, Auto-Setup. Application Windows, insert Dante, plugin DAW.">
+  <meta property="og:title" content="FeedZero – Anti-larsen temps réel pour la scène | Audio Solutions Network">
+  <meta property="og:description" content="FeedZero supprime le larsen en temps réel sur scène. Stage Lock, mode KILL, Auto-Setup. Application Windows, insert Dante, plugin DAW.">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+  <nav class="site-nav">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="/fr/" class="nav-logo">
+          <img src="../assets/img/feedzero-logo.svg" alt="Logo FeedZero" class="nav-logo-submark" loading="lazy">
+        </a>
+        <ul class="nav-links">
+          <li><a href="#about">A propos</a></li>
+          <li><a href="#technologie">Technologie</a></li>
+          <li><a href="#modes">Modes</a></li>
+          <li><a href="#routing">Routing</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-lang nav-desktop">
+          <a href="/fr/" data-lang="fr" class="lang-active">FR</a>
+          <a href="/en/" data-lang="en">EN</a>
+        </div>
+        <button class="nav-hamburger" aria-label="Menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="nav-mobile">
+      <a href="#about">A propos</a>
+      <a href="#technologie">Technologie</a>
+      <a href="#modes">Modes</a>
+      <a href="#routing">Routing</a>
+      <a href="contact.html">Contact</a>
+      <div class="nav-lang">
+        <a href="/fr/" data-lang="fr">FR</a>
+        <a href="/en/" data-lang="en">EN</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <h1>L'anti-larsen qui ne sonne pas<br><span class="accent">comme un anti-larsen.</span></h1>
+          <p class="hero-sub">FeedZero détecte et supprime le feedback acoustique en temps réel grâce à une intelligence artificielle de détection et de décision, afin de préserver la clarté et la musicalité du signal en live.</p>
+          <div class="hero-actions">
+            <a href="#about" class="btn btn-primary btn-lg">Découvrir FeedZero</a>
+            <a href="docs/" class="btn btn-outline btn-lg">Voir la documentation</a>
+          </div>
+        </div>
+        <img src="../assets/img/ui-fullscreen-preview.svg" alt="Interface FeedZero — Spectrum Analyzer et Main Controls" class="hero-corner-logo" loading="eager">
+      </div>
+    </section>
+
+    <!-- Interface logicielle -->
+    <section class="section interface-showcase" id="about">
+      <div class="container">
+        <div class="interface-layout">
+          <div class="interface-copy">
+            <div class="interface-brand">
+              <img src="../assets/img/feedzero-logo.svg" alt="Logo FeedZero" class="interface-logo">
+              <div>
+                <h2>Modele adaptatif et calibration guidee</h2>
+              </div>
+            </div>
+            <p class="interface-lead">Une interface claire pour couvrir les etapes essentielles: collecte IR, creation du dataset, entrainement du modele, puis calibration finale.</p>
+            <div class="interface-points">
+              <span class="interface-point">Collecte IR rapide</span>
+              <span class="interface-point">Dataset signal / larsen</span>
+              <span class="interface-point">Entrainement par grille</span>
+              <span class="interface-point">Calibration anti-faux positifs</span>
+              <span class="interface-point">F1 score et metriques visibles</span>
+            </div>
+          </div>
+          <figure class="interface-figure">
+            <img src="../assets/img/ui-training-preview.svg" alt="Capture de l'interface FeedZero: collecte IR, dataset, entrainement et calibration" loading="lazy">
+            <figcaption>Module Model Training.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technologie -->
+    <section class="section" id="technologie">
+      <div class="container">
+        <div class="section-header">
+          <h2>Technologie : Le moteur FeedZero</h2>
+          <p>L'Intelligence du Signal au service du Live</p>
+        </div>
+        <p style="color:var(--text-muted);font-size:1.02rem;max-width:860px;">Plutot qu'une IA "boite noire" imprevisible et gourmande en ressources, FeedZero utilise un Moteur DSP Adaptatif de haute precision. Cette approche garantit une latence ultra-faible (inferieure a 2 ms) et une transparence sonore totale.</p>
+        <div class="cards-grid" style="margin-top:var(--sp-xl);">
+          <div class="card">
+            <h3>Analyse Spectrale Temps-Reel (FFT)</h3>
+            <p>FeedZero decompose le signal entrant en milliers de bandes de frequences pour identifier instantanement les pics anormaux.</p>
+          </div>
+          <div class="card">
+            <h3>Algorithme de Persistance Intelligente</h3>
+            <p>Le moteur distingue la musique et la voix des veritables larsens en analysant la stabilite et la croissance energetique de chaque frequence sur le temps long.</p>
+          </div>
+          <div class="card">
+            <h3>Filtrage Adaptatif par Notches</h3>
+            <p>Contrairement a un egaliseur fixe, FeedZero deploie des filtres dynamiques "notches" d'une precision chirurgicale, en supprimant uniquement la frequence responsable du sifflement sans denaturer le timbre.</p>
+          </div>
+          <div class="card">
+            <h3>Calibration Farina (Auto-Setup)</h3>
+            <p>Avec des balayages sinusoidaux (sweeps), FeedZero cartographie l'acoustique de votre retour (wedge) et de votre micro pour anticiper les zones de resonance avant meme le premier larsen.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Le problème -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Le problème</h2>
+        </div>
+        <p style="color:var(--text-muted);font-size:1.1rem;max-width:680px;margin-bottom:var(--sp-xl);">Vous connaissez le moment. Le wedge qui commence à siffler. La voix qui part en larsen. La panique dans les yeux du chanteur. FeedZero gère ça avant que vous ayez à intervenir.</p>
+        <div class="alert alert-tip">
+          <div class="alert-icon">💡</div>
+          <div class="alert-body">
+            <p>Le feedback acoustique se produit en millisecondes. Une suppression réactive en temps réel est la seule solution viable en conditions live.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trois modes -->
+    <section class="section" id="modes">
+      <div class="container">
+        <div class="section-header">
+          <h2>Trois modes, un seul objectif</h2>
+        </div>
+        <div class="cards-grid cards-grid-3">
+
+          <div class="card mode-card mode-stagelock">
+            <div class="mode-badge mode-badge-success">Stage Lock</div>
+            <div class="card-icon card-icon-success" style="margin-top:var(--sp-md);">✦</div>
+            <p>Suppression stable et transparente. Les notches s'adaptent progressivement. Priorité à la transparence sonore. Idéal pour les sets longs.</p>
+          </div>
+
+          <div class="card mode-card mode-kill">
+            <div class="mode-badge mode-badge-warning">KILL – Zero Feedback</div>
+            <div class="card-icon card-icon-warning" style="margin-top:var(--sp-md);">⚡</div>
+            <p>Arrêt brutal du larsen. Peut colorer le son. À utiliser quand la situation dérape. Efficacité avant neutralité.</p>
+          </div>
+
+          <div class="card mode-card mode-panic">
+            <div class="mode-badge mode-badge-danger">PANIC</div>
+            <div class="card-icon card-icon-danger" style="margin-top:var(--sp-md);">⛔</div>
+            <p>Mute immédiat + reset complet des notches et compteurs. Dernier recours. Reprend depuis zéro.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Auto-Setup -->
+    <section class="section" id="setup">
+      <div class="container">
+        <div class="section-header">
+          <h2>Auto-Setup</h2>
+          <p>Calibration automatique par sweep Farina</p>
+        </div>
+        <p style="color:var(--text-muted);margin-bottom:var(--sp-lg);">FeedZero lance un sweep Farina sur le wedge et capture la réponse via le micro scénique. Il calcule l'IR du système et propose des notches et paramètres adaptés à votre rig — en quelques secondes. <span style="font-size:1.4rem;">🎚</span></p>
+        <div class="alert alert-tip">
+          <div class="alert-icon">💡</div>
+          <div class="alert-body">
+            <p>Pas de magie — juste une mesure rigoureuse. Les paramètres proposés sont un point de départ. Affinez-les selon vos retours terrain.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Routing flexible -->
+    <section class="section" id="routing">
+      <div class="container">
+        <div class="section-header">
+          <h2>Routing flexible</h2>
+        </div>
+        <div class="cards-grid">
+
+          <div class="card">
+            <div class="card-icon card-icon-cyan">🖥️</div>
+            <h3>Standalone Windows</h3>
+            <p>IN → FeedZero → OUT via ASIO/WDM. Plug-and-play avec votre interface audio existante.</p>
+          </div>
+
+          <div class="card">
+            <div class="card-icon card-icon-cyan">🎛️</div>
+            <h3>Plugin DAW</h3>
+            <p>Insert sur piste ou bus. VST3/AAX. Compatible Reaper, Nuendo, Pro Tools et plus.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+      <div class="container">
+        <h2>Passez a un controle anti-larsen plus propre</h2>
+        <p>Decouvrez le produit en detail ou prenez contact avec notre equipe.</p>
+        <div class="cta-actions">
+          <a href="contact.html" class="btn btn-primary btn-lg">Parler a l'equipe</a>
+          <a href="docs/" class="btn btn-outline btn-lg">Consulter la doc</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/fr/" class="nav-logo">
+            <img src="../assets/img/feedzero-logo.svg" alt="Logo FeedZero" class="footer-brand-logo" loading="lazy">
+          </a>
+          <p>L'anti-larsen qui ne sonne pas comme un anti-larsen</p>
+        </div>
+        <div>
+          <p class="footer-heading">Produit</p>
+          <ul class="footer-links">
+            <li><a href="#about">A propos</a></li>
+            <li><a href="license.html">Licence</a></li>
+            <li><a href="docs/">Documentation</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-heading">Support</p>
+          <ul class="footer-links">
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="privacy.html">Confidentialité</a></li>
+            <li><a href="mailto:contact@audiosn.com">contact@audiosn.com</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-heading">Langue</p>
+          <div class="nav-lang footer-lang">
+            <a href="/fr/" data-lang="fr">FR</a>
+            <a href="/en/" data-lang="en">EN</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span class="footer-copyright">© 2024 Audio Solutions Network. Tous droits réservés.</span>
+        <a href="privacy.html" style="color:var(--text-dim);font-size:0.82rem;">Politique de confidentialité</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

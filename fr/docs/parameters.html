@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paramètres – Documentation FeedZero</title>
+  <meta name="description" content="Référence complète des paramètres FeedZero : Suppression Strength, Sensitivity, Max Notches, Notch Width, Channel Mode et presets.">
+  <meta property="og:title" content="Paramètres – Documentation FeedZero">
+  <meta property="og:description" content="Référence complète des paramètres FeedZero : Suppression Strength, Sensitivity, Max Notches, Notch Width, Channel Mode et presets.">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+  <nav class="site-nav">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="/fr/" class="nav-logo">
+          <div class="nav-logo-mark">FZ</div>
+          FeedZero
+        </a>
+        <ul class="nav-links">
+          <li><a href="../download.html">Télécharger</a></li>
+          <li><a href="index.html">Docs</a></li>
+          <li><a href="../license.html">Licence</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-lang nav-desktop">
+          <a href="/fr/docs/parameters.html" data-lang="fr" class="lang-active">FR</a>
+          <a href="/en/docs/parameters.html" data-lang="en">EN</a>
+        </div>
+        <button class="nav-hamburger" aria-label="Menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="nav-mobile">
+      <a href="../download.html">Télécharger</a>
+      <a href="index.html">Docs</a>
+      <a href="../license.html">Licence</a>
+      <a href="../contact.html">Contact</a>
+      <div class="nav-lang">
+        <a href="/fr/docs/parameters.html" data-lang="fr">FR</a>
+        <a href="/en/docs/parameters.html" data-lang="en">EN</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="doc-layout">
+
+          <nav class="doc-sidebar">
+            <p class="doc-sidebar-title">Documentation</p>
+            <ul class="doc-sidebar-nav">
+              <li><a href="index.html">Vue d'ensemble</a></li>
+              <li><a href="getting-started.html">Prise en main</a></li>
+              <li><a href="stage-lock.html">Stage Lock</a></li>
+              <li><a href="auto-setup.html">Auto-Setup</a></li>
+              <li><a href="routing.html">Routing</a></li>
+              <li><a href="parameters.html">Paramètres</a></li>
+              <li><a href="troubleshooting.html">Dépannage</a></li>
+            </ul>
+          </nav>
+
+          <div class="doc-content">
+
+            <nav class="doc-breadcrumb">
+              <a href="index.html">Docs</a>
+              <span>/</span>
+              <span>Paramètres</span>
+            </nav>
+
+            <h1>Paramètres</h1>
+            <p>Référence complète des paramètres de FeedZero. Tous les paramètres sont accessibles depuis l'interface principale.</p>
+
+            <table class="params-table">
+              <thead>
+                <tr>
+                  <th>Paramètre</th>
+                  <th>Plage</th>
+                  <th>Par défaut</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Suppression Strength</td>
+                  <td>0–100%</td>
+                  <td>60%</td>
+                  <td>Profondeur des notches. 100% = protection max mais impact sonore potentiel. 50–70% recommandé en Stage Lock.</td>
+                </tr>
+                <tr>
+                  <td>Sensitivity</td>
+                  <td>0–100%</td>
+                  <td>50%</td>
+                  <td>Seuil de déclenchement de la détection. Trop haut = larsen avant action. Trop bas = faux positifs.</td>
+                </tr>
+                <tr>
+                  <td>Max Notches</td>
+                  <td>1–24</td>
+                  <td>8</td>
+                  <td>Nombre maximum de notches actifs simultanément. 6–12 recommandé selon la salle.</td>
+                </tr>
+                <tr>
+                  <td>Notch Width</td>
+                  <td>Narrow–Wide (Q 1–30)</td>
+                  <td>Medium</td>
+                  <td>Narrow (Q élevé) = précis. Wide = plus grossier mais plus robuste.</td>
+                </tr>
+                <tr>
+                  <td>Channel Mode</td>
+                  <td>Stereo→Stereo / Mono→Stereo / Mono→Mono</td>
+                  <td>Auto</td>
+                  <td>Mode de traitement selon le routing.</td>
+                </tr>
+                <tr>
+                  <td>Mode</td>
+                  <td>Stage Lock / KILL / PANIC</td>
+                  <td>Stage Lock</td>
+                  <td>Mode de suppression actif.</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h2>Presets</h2>
+            <div class="cards-grid cards-grid-3" style="margin-top:var(--sp-md);">
+
+              <div class="card">
+                <div class="card-icon card-icon-cyan">🎤</div>
+                <h3>Live</h3>
+                <p>Équilibré pour la scène. Bon compromis entre protection et transparence.</p>
+              </div>
+
+              <div class="card">
+                <div class="card-icon card-icon-success">🎙️</div>
+                <h3>Voix</h3>
+                <p>Optimisé speech et conférence. Sensitivity élevée, Max Notches réduit.</p>
+              </div>
+
+              <div class="card">
+                <div class="card-icon card-icon-warning">🎵</div>
+                <h3>Musique</h3>
+                <p>Protection douce. Priorité à la transparence et à la neutralité musicale.</p>
+              </div>
+
+            </div>
+
+            <div class="alert alert-tip" style="margin-top:var(--sp-xl);">
+              <div class="alert-icon">💡</div>
+              <div class="alert-body">
+                <p>Les presets sont des points de départ — ajustez selon votre rig.</p>
+              </div>
+            </div>
+
+            <!-- Doc nav footer -->
+            <div class="doc-nav-footer">
+              <a href="routing.html" class="doc-nav-prev">
+                <span class="doc-nav-label">Précédent</span>
+                <span class="doc-nav-title">← Routing</span>
+              </a>
+              <a href="troubleshooting.html" class="doc-nav-next">
+                <span class="doc-nav-label">Suivant</span>
+                <span class="doc-nav-title">Dépannage →</span>
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/fr/" class="nav-logo">
+            <div class="nav-logo-mark">FZ</div>
+            FeedZero
+          </a>
+          <p>Anti-larsen temps réel pour la scène et le studio.</p>
+        </div>
+        <div>
+          <p class="footer-heading">Produit</p>
+          <ul class="footer-links">
+            <li><a href="../download.html">Télécharger</a></li>
+            <li><a href="../license.html">Licence</a></li>
+            <li><a href="index.html">Documentation</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-heading">Support</p>
+          <ul class="footer-links">
+            <li><a href="../contact.html">Contact</a></li>
+            <li><a href="../privacy.html">Confidentialité</a></li>
+            <li><a href="mailto:contact@audiosn.com">contact@audiosn.com</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-heading">Langue</p>
+          <div class="nav-lang footer-lang">
+            <a href="/fr/" data-lang="fr">FR</a>
+            <a href="/en/" data-lang="en">EN</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span class="footer-copyright">© 2024 Audio Solutions Network. Tous droits réservés.</span>
+        <a href="../privacy.html" style="color:var(--text-dim);font-size:0.82rem;">Politique de confidentialité</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../assets/js/main.js"></script>
+</body>
+</html>

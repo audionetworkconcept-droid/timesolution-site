@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Auto-Setup – Documentation FeedZero</title>
+  <meta name="description" content="Auto-Setup FeedZero : calibration par sweep Farina, capture IR, procédure et avertissements.">
+  <meta property="og:title" content="Auto-Setup – Documentation FeedZero">
+  <meta property="og:description" content="Auto-Setup FeedZero : calibration par sweep Farina, capture IR, procédure et avertissements.">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+  <nav class="site-nav">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="/fr/" class="nav-logo">
+          <div class="nav-logo-mark">FZ</div>
+          FeedZero
+        </a>
+        <ul class="nav-links">
+          <li><a href="../download.html">Télécharger</a></li>
+          <li><a href="index.html">Docs</a></li>
+          <li><a href="../license.html">Licence</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-lang nav-desktop">
+          <a href="/fr/docs/auto-setup.html" data-lang="fr" class="lang-active">FR</a>
+          <a href="/en/docs/auto-setup.html" data-lang="en">EN</a>
+        </div>
+        <button class="nav-hamburger" aria-label="Menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="nav-mobile">
+      <a href="../download.html">Télécharger</a>
+      <a href="index.html">Docs</a>
+      <a href="../license.html">Licence</a>
+      <a href="../contact.html">Contact</a>
+      <div class="nav-lang">
+        <a href="/fr/docs/auto-setup.html" data-lang="fr">FR</a>
+        <a href="/en/docs/auto-setup.html" data-lang="en">EN</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="doc-layout">
+
+          <nav class="doc-sidebar">
+            <p class="doc-sidebar-title">Documentation</p>
+            <ul class="doc-sidebar-nav">
+              <li><a href="index.html">Vue d'ensemble</a></li>
+              <li><a href="getting-started.html">Prise en main</a></li>
+              <li><a href="stage-lock.html">Stage Lock</a></li>
+              <li><a href="auto-setup.html">Auto-Setup</a></li>
+              <li><a href="routing.html">Routing</a></li>
+              <li><a href="parameters.html">Paramètres</a></li>
+              <li><a href="troubleshooting.html">Dépannage</a></li>
+            </ul>
+          </nav>
+
+          <div class="doc-content">
+
+            <nav class="doc-breadcrumb">
+              <a href="index.html">Docs</a>
+              <span>/</span>
+              <span>Auto-Setup</span>
+            </nav>
+
+            <h1>Auto-Setup (Sweep / IR)</h1>
+
+            <h2>Principe</h2>
+            <p>Auto-Setup lance un sweep Farina sur la sortie wedge/retour. FeedZero capture la réponse via le micro scénique. Calcule l'IR (réponse impulsionnelle) du système. Propose des notches et paramètres de départ adaptés à votre rig.</p>
+
+            <h2>Ce que c'est / ce que ce n'est pas</h2>
+            <div class="alert alert-tip">
+              <div class="alert-icon">💡</div>
+              <div class="alert-body">
+                <p>Auto-Setup est une aide à la configuration, pas une solution magique. Le résultat dépend de la qualité du placement micro et des conditions acoustiques au moment du sweep.</p>
+              </div>
+            </div>
+
+            <h2>Procédure</h2>
+            <ol style="color:var(--text-muted);display:flex;flex-direction:column;gap:var(--sp-sm);padding-left:var(--sp-xl);">
+              <li>Positionnez le micro en position de performance réelle</li>
+              <li>Coupez toutes les sources audio (musiciens, autres wedges)</li>
+              <li>Lancez Auto-Setup depuis l'interface FeedZero</li>
+              <li>Attendez la fin du sweep (quelques secondes)</li>
+              <li>Validez ou ajustez les paramètres proposés</li>
+            </ol>
+
+            <h2>Avertissements</h2>
+            <div class="alert alert-warning">
+              <div class="alert-icon">⚠️</div>
+              <div class="alert-body">
+                <p>Le sweep est audible. Prévenez les personnes présentes. Ne bougez pas le micro pendant le sweep.</p>
+              </div>
+            </div>
+            <div class="alert alert-danger" style="margin-top:var(--sp-md);">
+              <div class="alert-icon">⛔</div>
+              <div class="alert-body">
+                <p>N'utilisez pas Auto-Setup pendant un événement en cours. Réservez-le au soundcheck.</p>
+              </div>
+            </div>
+
+            <h2>Après le sweep</h2>
+            <p>Les paramètres proposés sont un point de départ. Affinez-les selon vos retours terrain. Relancez Auto-Setup si vous changez significativement le placement ou les niveaux.</p>
+
+            <!-- Doc nav footer -->
+            <div class="doc-nav-footer">
+              <a href="stage-lock.html" class="doc-nav-prev">
+                <span class="doc-nav-label">Précédent</span>
+                <span class="doc-nav-title">← Stage Lock</span>
+              </a>
+              <a href="routing.html" class="doc-nav-next">
+                <span class="doc-nav-label">Suivant</span>
+                <span class="doc-nav-title">Routing →</span>
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/fr/" class="nav-logo">
+            <div class="nav-logo-mark">FZ</div>
+            FeedZero
+          </a>
+          <p>Anti-larsen temps réel pour la scène et le studio.</p>
+        </div>
+        <div>
+          <p class="footer-heading">Produit</p>
+          <ul class="footer-links">
+            <li><a href="../download.html">Télécharger</a></li>
+            <li><a href="../license.html">Licence</a></li>
+            <li><a href="index.html">Documentation</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-heading">Support</p>
+          <ul class="footer-links">
+            <li><a href="../contact.html">Contact</a></li>
+            <li><a href="../privacy.html">Confidentialité</a></li>
+            <li><a href="mailto:contact@audiosn.com">contact@audiosn.com</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-heading">Langue</p>
+          <div class="nav-lang footer-lang">
+            <a href="/fr/" data-lang="fr">FR</a>
+            <a href="/en/" data-lang="en">EN</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span class="footer-copyright">© 2024 Audio Solutions Network. Tous droits réservés.</span>
+        <a href="../privacy.html" style="color:var(--text-dim);font-size:0.82rem;">Politique de confidentialité</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../assets/js/main.js"></script>
+</body>
+</html>

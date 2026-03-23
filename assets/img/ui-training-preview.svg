@@ -1,0 +1,57 @@
+<svg width="1280" height="720" viewBox="0 0 1280 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1280" y2="720" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#111A22"/>
+      <stop offset="1" stop-color="#060B11"/>
+    </linearGradient>
+    <linearGradient id="line" x1="0" y1="0" x2="1280" y2="0" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#00E5FF" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#00E5FF" stop-opacity="0.1"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="1" y="1" width="1278" height="718" rx="18" fill="url(#bg)" stroke="#274458" stroke-width="2"/>
+
+  <rect x="36" y="42" width="1208" height="56" rx="8" fill="#0E1820" stroke="#2B4558"/>
+  <text x="58" y="77" fill="#9BCBFF" font-family="Arial, sans-serif" font-size="24" font-weight="700">Model Training</text>
+
+  <rect x="36" y="118" width="1208" height="228" rx="8" fill="#0B141B" stroke="#223745"/>
+
+  <rect x="58" y="154" width="272" height="154" rx="6" fill="#0F1D26" stroke="#284455"/>
+  <rect x="350" y="154" width="272" height="154" rx="6" fill="#0F1D26" stroke="#284455"/>
+  <rect x="642" y="154" width="272" height="154" rx="6" fill="#0F1D26" stroke="#284455"/>
+  <rect x="934" y="154" width="272" height="154" rx="6" fill="#0F1D26" stroke="#284455"/>
+
+  <text x="78" y="196" fill="#DDEBFF" font-family="Arial, sans-serif" font-size="25" font-weight="700">Collecte IR</text>
+  <text x="370" y="196" fill="#DDEBFF" font-family="Arial, sans-serif" font-size="25" font-weight="700">Creation Dataset</text>
+  <text x="662" y="196" fill="#DDEBFF" font-family="Arial, sans-serif" font-size="25" font-weight="700">Entrainement</text>
+  <text x="954" y="196" fill="#DDEBFF" font-family="Arial, sans-serif" font-size="25" font-weight="700">Calibration</text>
+
+  <line x1="75" y1="290" x2="312" y2="290" stroke="url(#line)" stroke-width="4"/>
+  <line x1="367" y1="290" x2="604" y2="290" stroke="url(#line)" stroke-width="4"/>
+  <line x1="659" y1="290" x2="896" y2="290" stroke="url(#line)" stroke-width="4"/>
+  <line x1="951" y1="290" x2="1188" y2="290" stroke="url(#line)" stroke-width="4"/>
+
+  <rect x="36" y="368" width="1208" height="128" rx="8" fill="#09131A" stroke="#213646"/>
+  <text x="58" y="410" fill="#89B7DF" font-family="Courier New, monospace" font-size="20">[17:41:10] Modele existant charge (feedzero_model.json)</text>
+
+  <rect x="36" y="518" width="1208" height="160" rx="8" fill="#0A141B" stroke="#223745"/>
+
+  <text x="82" y="572" fill="#98ADC0" font-family="Arial, sans-serif" font-size="19">F1 Score</text>
+  <text x="84" y="610" fill="#DDEBFF" font-family="Arial, sans-serif" font-size="34" font-weight="700">0.9224</text>
+
+  <text x="290" y="572" fill="#98ADC0" font-family="Arial, sans-serif" font-size="19">False Positives</text>
+  <text x="292" y="610" fill="#DDEBFF" font-family="Arial, sans-serif" font-size="34" font-weight="700">0.0262</text>
+
+  <text x="546" y="572" fill="#98ADC0" font-family="Arial, sans-serif" font-size="19">peak_db</text>
+  <text x="528" y="610" fill="#DDEBFF" font-family="Arial, sans-serif" font-size="34" font-weight="700">12.0000 dB</text>
+
+  <text x="760" y="572" fill="#98ADC0" font-family="Arial, sans-serif" font-size="19">floor_alpha</text>
+  <text x="760" y="610" fill="#DDEBFF" font-family="Arial, sans-serif" font-size="34" font-weight="700">0.0250</text>
+
+  <text x="964" y="572" fill="#98ADC0" font-family="Arial, sans-serif" font-size="19">persist</text>
+  <text x="964" y="610" fill="#DDEBFF" font-family="Arial, sans-serif" font-size="34" font-weight="700">6 fr</text>
+
+  <rect x="56" y="628" width="260" height="36" rx="6" fill="#7A49FF"/>
+  <text x="86" y="653" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="18" font-weight="700">Demarrer l'entrainement</text>
+</svg>
