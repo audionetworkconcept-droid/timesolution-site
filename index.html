@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Time Solution – Stable. Sync. Secure.</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --cyan: #00f5ff;
+      --cyan-dim: #00c8d7;
+      --bg: #0b0e14;
+      --surface: #111620;
+      --surface2: #1a2030;
+      --border: rgba(0, 245, 255, 0.15);
+      --text: #e2e8f0;
+      --muted: #8892a4;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+    a { text-decoration: none; color: inherit; }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1rem 2rem;
+      background: rgba(11, 14, 20, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    nav .logo { font-weight: 800; font-size: 1.2rem; color: var(--cyan); letter-spacing: 0.05em; }
+    nav ul { list-style: none; display: flex; gap: 2rem; }
+    nav ul a { color: var(--muted); font-size: 0.9rem; font-weight: 600; transition: color 0.2s; }
+    nav ul a:hover { color: var(--cyan); }
+    nav .nav-cta {
+      padding: 0.5rem 1.2rem; background: var(--cyan); color: #000;
+      font-weight: 700; border-radius: 8px; font-size: 0.9rem; transition: 0.2s;
+    }
+    nav .nav-cta:hover { background: var(--cyan-dim); }
+
+    /* ── HERO ── */
+    header {
+      min-height: 100vh;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      text-align: center; padding: 8rem 2rem 4rem;
+      background: radial-gradient(ellipse at 50% 60%, rgba(0,245,255,0.07) 0%, transparent 70%);
+    }
+    .tag {
+      display: inline-block; padding: 0.4rem 1rem;
+      border: 1px solid var(--border); border-radius: 100px;
+      font-size: 0.8rem; font-weight: 600; color: var(--cyan); letter-spacing: 0.08em;
+      text-transform: uppercase; margin-bottom: 1.5rem;
+    }
+    header h1 { font-size: clamp(2.4rem, 6vw, 4.5rem); font-weight: 800; line-height: 1.1; margin-bottom: 1.5rem; }
+    header h1 span { color: var(--cyan); }
+    header p { font-size: 1.15rem; color: var(--muted); max-width: 640px; margin-bottom: 2.5rem; }
+    .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
+    .btn-primary {
+      padding: 0.85rem 2rem; background: var(--cyan); color: #000;
+      font-weight: 700; border-radius: 10px; transition: 0.2s; font-size: 1rem;
+    }
+    .btn-primary:hover { background: var(--cyan-dim); transform: translateY(-2px); }
+    .btn-ghost {
+      padding: 0.85rem 2rem; border: 1px solid var(--border); color: var(--text);
+      font-weight: 600; border-radius: 10px; transition: 0.2s; font-size: 1rem;
+    }
+    .btn-ghost:hover { border-color: var(--cyan); color: var(--cyan); }
+
+    .badges { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; margin-top: 2.5rem; }
+    .badge-item {
+      padding: 0.4rem 0.9rem; border-radius: 6px;
+      background: var(--surface); border: 1px solid var(--border);
+      font-size: 0.78rem; font-weight: 600; color: var(--muted);
+    }
+
+    /* ── SECTIONS ── */
+    section { padding: 6rem 2rem; }
+    .container { max-width: 1200px; margin: auto; }
+    .section-tag { font-size: 0.78rem; font-weight: 700; color: var(--cyan); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.8rem; }
+    .section-title { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 800; margin-bottom: 1rem; }
+    .section-sub { color: var(--muted); max-width: 600px; font-size: 1.05rem; }
+
+    /* ── GRID ── */
+    .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
+    .card {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 16px;
+      padding: 2rem; transition: 0.25s;
+    }
+    .card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,245,255,0.08); border-color: rgba(0,245,255,0.3); }
+    .card-icon { font-size: 2rem; margin-bottom: 1rem; }
+    .card h3 { font-size: 1.1rem; font-weight: 700; color: var(--cyan); margin-bottom: 0.6rem; }
+    .card p { color: var(--muted); font-size: 0.95rem; }
+
+    /* ── PROTOCOLS ── */
+    .protocols { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem; }
+    .proto-chip {
+      padding: 0.5rem 1.1rem; border-radius: 8px;
+      background: var(--surface2); border: 1px solid var(--border);
+      font-weight: 700; font-size: 0.88rem; color: var(--cyan);
+      transition: 0.2s;
+    }
+    .proto-chip:hover { background: rgba(0,245,255,0.12); }
+
+    /* ── LIVE DASHBOARD ── */
+    #dashboard { background: var(--surface); }
+    .dash-panel {
+      background: var(--bg); border: 1px solid var(--border); border-radius: 16px;
+      padding: 2rem; margin-top: 2.5rem;
+    }
+    .dash-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem; }
+    .dash-header h3 { font-size: 1rem; font-weight: 700; color: var(--text); }
+    .status-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #22c55e; margin-right: 6px; animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+    .live-label { font-size: 0.78rem; font-weight: 700; color: #22c55e; }
+
+    .timeline-stack { display: flex; flex-direction: column; gap: 1.5rem; }
+    .tl-row { display: flex; align-items: center; gap: 1rem; }
+    .tl-label { font-size: 0.78rem; font-weight: 700; color: var(--muted); width: 80px; flex-shrink: 0; text-align: right; }
+    .tl-track {
+      flex: 1; height: 32px; background: var(--surface2); border-radius: 16px;
+      border: 1px solid var(--border); overflow: hidden; position: relative;
+    }
+    .tl-cue {
+      position: absolute; height: 32px; width: 18px; border-radius: 9px;
+      animation: sweep 4s linear infinite;
+    }
+    .tl-cue.c1 { background: var(--cyan); animation-delay: 0s; }
+    .tl-cue.c2 { background: #ff6fff; animation-delay: 1.3s; }
+    .tl-cue.c3 { background: #ffea00; animation-delay: 2.5s; }
+    .tl-cue.c4 { background: #ff8c42; animation-delay: 0.7s; }
+    .tl-cue.c5 { background: #7fff00; animation-delay: 1.9s; }
+    @keyframes sweep { 0%{left:-20px} 100%{left:calc(100% + 20px)} }
+    .tl-latency { font-size: 0.75rem; font-weight: 700; color: var(--cyan); width: 56px; flex-shrink: 0; }
+
+    /* ── WAVEFORM ── */
+    .waveform-wrap { margin-top: 2rem; }
+    .waveform-canvas { width: 100%; height: 80px; }
+    svg.waveform path { stroke-dasharray: 1000; stroke-dashoffset: 1000; animation: drawLine 3s ease forwards infinite; }
+    @keyframes drawLine { to { stroke-dashoffset: 0; } }
+
+    /* ── PLATFORM ── */
+    .platform-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
+    .platform-card {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 16px;
+      padding: 1.5rem; text-align: center;
+    }
+    .platform-card .icon { font-size: 2.5rem; margin-bottom: 0.8rem; }
+    .platform-card h4 { font-weight: 700; color: var(--text); margin-bottom: 0.4rem; }
+    .platform-card p { color: var(--muted); font-size: 0.88rem; }
+
+    /* ── PRICING ── */
+    #pricing { background: var(--surface); }
+    .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
+    .price-card {
+      background: var(--bg); border: 1px solid var(--border); border-radius: 20px;
+      padding: 2.5rem 2rem; text-align: center; transition: 0.25s; position: relative;
+    }
+    .price-card.featured { border-color: var(--cyan); }
+    .price-card.featured::before {
+      content: "MOST POPULAR"; position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+      background: var(--cyan); color: #000; font-size: 0.7rem; font-weight: 800;
+      padding: 0.25rem 0.8rem; border-radius: 100px; letter-spacing: 0.08em;
+    }
+    .price-card h3 { font-size: 1.1rem; font-weight: 700; color: var(--muted); margin-bottom: 1rem; }
+    .price { font-size: 2.8rem; font-weight: 800; color: var(--text); }
+    .price span { font-size: 1rem; color: var(--muted); font-weight: 400; }
+    .price-features { list-style: none; margin: 1.5rem 0 2rem; text-align: left; display: flex; flex-direction: column; gap: 0.6rem; }
+    .price-features li { font-size: 0.9rem; color: var(--muted); }
+    .price-features li::before { content: "✓ "; color: var(--cyan); font-weight: 700; }
+
+    /* ── CONTACT ── */
+    form { display: flex; flex-direction: column; gap: 1rem; max-width: 540px; margin: 2.5rem auto 0; }
+    input, textarea, select {
+      padding: 1rem; border-radius: 10px; border: 1px solid var(--border);
+      background: var(--surface); color: var(--text); font-family: inherit; font-size: 0.95rem;
+      outline: none; transition: border-color 0.2s;
+    }
+    input:focus, textarea:focus, select:focus { border-color: var(--cyan); }
+    textarea { resize: vertical; min-height: 120px; }
+    button[type="submit"] {
+      padding: 1rem; background: var(--cyan); color: #000;
+      font-weight: 700; border: none; border-radius: 10px; cursor: pointer;
+      font-size: 1rem; transition: 0.2s;
+    }
+    button[type="submit"]:hover { background: var(--cyan-dim); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #07090f; border-top: 1px solid var(--border);
+      padding: 3rem 2rem; text-align: center;
+    }
+    footer .footer-logo { font-size: 1.3rem; font-weight: 800; color: var(--cyan); margin-bottom: 0.5rem; }
+    footer .footer-sub { color: var(--muted); font-size: 0.88rem; margin-bottom: 1.5rem; }
+    footer .footer-links { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2rem; }
+    footer .footer-links a { color: var(--muted); font-size: 0.88rem; transition: color 0.2s; }
+    footer .footer-links a:hover { color: var(--cyan); }
+    footer .copy { color: #4a5568; font-size: 0.8rem; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      nav ul { display: none; }
+      .tl-label { width: 56px; font-size: 0.7rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="logo">⏱ TIME SOLUTION</div>
+    <ul>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#protocols">Protocols</a></li>
+      <li><a href="#dashboard">Live Monitor</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">Book a Demo</a>
+  </nav>
+
+  <!-- HERO -->
+  <header>
+    <div class="tag">Professional Timecode & Sync Engine</div>
+    <h1>Stable.<br><span>Sync.</span><br>Secure.</h1>
+    <p>Orchestrate audio, video and lighting across every major protocol from a single high-precision timing hub — built for live events, broadcast and installation.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-primary">Request a Demo</a>
+      <a href="#features" class="btn-ghost">Explore Features</a>
+    </div>
+    <div class="badges">
+      <span class="badge-item">✓ MIDI / MTC</span>
+      <span class="badge-item">✓ OSC</span>
+      <span class="badge-item">✓ Dante</span>
+      <span class="badge-item">✓ Art-Net / sACN</span>
+      <span class="badge-item">✓ SMPTE / LTC</span>
+      <span class="badge-item">✓ Windows &amp; macOS</span>
+    </div>
+  </header>
+
+  <!-- FEATURES -->
+  <section id="features">
+    <div class="container">
+      <p class="section-tag">Core Capabilities</p>
+      <h2 class="section-title">Everything your show needs to run on time</h2>
+      <p class="section-sub">From small club installs to full stadium productions — Time Solution keeps every cue, trigger and protocol locked in sync.</p>
+
+      <div class="grid-3">
+        <div class="card">
+          <div class="card-icon">🎯</div>
+          <h3>High-Precision Timing Engine</h3>
+          <p>Sub-millisecond accuracy with Kalman-filter-based latency compensation, adaptive to network load and CPU spikes.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">📡</div>
+          <h3>Multi-Protocol Hub</h3>
+          <p>Unified clock for MIDI, OSC, Dante, Art-Net/sACN and SMPTE/LTC. Auto-detection, zero-config bridging.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">📊</div>
+          <h3>Real-Time Latency Waveforms</h3>
+          <p>Live latency monitoring with rolling waveform display. Detect network jitter before it disrupts your show.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🔄</div>
+          <h3>A/B Engine Hot-Swap</h3>
+          <p>Switch between Legacy and AI-Enhanced engine modes in one click — zero downtime, even mid-show.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🗂️</div>
+          <h3>Show Logging &amp; Diagnostics</h3>
+          <p>Every cue, packet loss and latency spike logged automatically. Export reports for post-event analysis.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🌐</div>
+          <h3>Remote Dashboard</h3>
+          <p>Monitor and control from any device on the local network — tablet, phone or FOH workstation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROTOCOLS -->
+  <section id="protocols" style="background: var(--surface);">
+    <div class="container">
+      <p class="section-tag">Protocol Support</p>
+      <h2 class="section-title">One engine. Every protocol.</h2>
+      <p class="section-sub">Time Solution speaks the language of every piece of gear on your rig.</p>
+      <div class="protocols">
+        <span class="proto-chip">MIDI 1.0 / MTC</span>
+        <span class="proto-chip">OSC (UDP/TCP)</span>
+        <span class="proto-chip">Dante (AES67)</span>
+        <span class="proto-chip">Art-Net 4</span>
+        <span class="proto-chip">sACN (E1.31)</span>
+        <span class="proto-chip">SMPTE 12M / LTC</span>
+        <span class="proto-chip">DMX512</span>
+        <span class="proto-chip">Ableton Link</span>
+        <span class="proto-chip">MIDI 2.0 (UMPX)</span>
+      </div>
+
+      <div class="platform-grid" style="margin-top: 3rem;">
+        <div class="platform-card">
+          <div class="icon">🖥️</div>
+          <h4>macOS</h4>
+          <p>Apple Silicon & Intel. CoreAudio, CoreMIDI, Bonjour networking.</p>
+        </div>
+        <div class="platform-card">
+          <div class="icon">🪟</div>
+          <h4>Windows</h4>
+          <p>Windows 10 / 11. ASIO, WDM, DirectSound support.</p>
+        </div>
+        <div class="platform-card">
+          <div class="icon">📱</div>
+          <h4>Remote Web UI</h4>
+          <p>Browser-based dashboard. Any device, zero install.</p>
+        </div>
+        <div class="platform-card">
+          <div class="icon">🏗️</div>
+          <h4>Rack Integration</h4>
+          <p>Dedicated hardware rack mode with USB update support.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIVE MONITOR DASHBOARD -->
+  <section id="dashboard">
+    <div class="container">
+      <p class="section-tag">Live Monitoring</p>
+      <h2 class="section-title">Real-time latency dashboard</h2>
+      <p class="section-sub">Watch every protocol stream live. Latency spikes are flagged before they become problems.</p>
+
+      <div class="dash-panel">
+        <div class="dash-header">
+          <h3>Protocol Sync Monitor</h3>
+          <span><span class="status-dot"></span><span class="live-label">LIVE</span></span>
+        </div>
+
+        <div class="timeline-stack">
+
+          <div class="tl-row">
+            <div class="tl-label">MIDI/MTC</div>
+            <div class="tl-track">
+              <div class="tl-cue c1"></div>
+              <div class="tl-cue c1" style="animation-delay:2s"></div>
+            </div>
+            <div class="tl-latency">0.4 ms</div>
+          </div>
+
+          <div class="tl-row">
+            <div class="tl-label">OSC</div>
+            <div class="tl-track">
+              <div class="tl-cue c2"></div>
+              <div class="tl-cue c2" style="animation-delay:2.6s"></div>
+            </div>
+            <div class="tl-latency">1.1 ms</div>
+          </div>
+
+          <div class="tl-row">
+            <div class="tl-label">SMPTE</div>
+            <div class="tl-track">
+              <div class="tl-cue c3"></div>
+              <div class="tl-cue c3" style="animation-delay:3.2s"></div>
+            </div>
+            <div class="tl-latency">0.2 ms</div>
+          </div>
+
+          <div class="tl-row">
+            <div class="tl-label">Art-Net</div>
+            <div class="tl-track">
+              <div class="tl-cue c4"></div>
+              <div class="tl-cue c4" style="animation-delay:1.5s"></div>
+            </div>
+            <div class="tl-latency">0.8 ms</div>
+          </div>
+
+          <div class="tl-row">
+            <div class="tl-label">Dante</div>
+            <div class="tl-track">
+              <div class="tl-cue c5"></div>
+              <div class="tl-cue c5" style="animation-delay:0.4s"></div>
+            </div>
+            <div class="tl-latency">0.1 ms</div>
+          </div>
+
+        </div>
+
+        <!-- SVG Latency Waveform -->
+        <div class="waveform-wrap">
+          <p style="font-size:0.8rem; color: var(--muted); margin-bottom: 0.5rem;">Latency Waveform — Last 30s</p>
+          <svg class="waveform-canvas" viewBox="0 0 800 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="wg" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#00f5ff" stop-opacity="0.4"/>
+                <stop offset="100%" stop-color="#00f5ff" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+            <path d="M0,60 C40,58 80,40 120,55 C160,70 200,30 240,45 C280,60 320,50 360,35 C400,20 440,50 480,40 C520,30 560,55 600,42 C640,29 680,50 720,38 C760,26 800,45 800,40"
+                  fill="url(#wg)" stroke="#00f5ff" stroke-width="2"/>
+          </svg>
+        </div>
+
+        <p style="text-align:center; color: var(--muted); margin-top: 1rem; font-size:0.85rem;">
+          ⚡ All protocols synchronised · Engine v2.0 · Kalman filter active
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing">
+    <div class="container">
+      <p class="section-tag">Plans</p>
+      <h2 class="section-title">Simple, professional pricing</h2>
+      <p class="section-sub">One-time licence. No subscriptions. Free updates for 12 months.</p>
+
+      <div class="pricing-grid">
+        <div class="price-card">
+          <h3>Studio</h3>
+          <div class="price">€490<span>/licence</span></div>
+          <ul class="price-features">
+            <li>Up to 3 protocols simultaneously</li>
+            <li>Standard timing engine</li>
+            <li>Basic show logging</li>
+            <li>macOS or Windows (1 seat)</li>
+            <li>Email support</li>
+          </ul>
+          <a href="#contact" class="btn-ghost" style="display:block; text-align:center; padding:0.8rem;">Get Started</a>
+        </div>
+
+        <div class="price-card featured">
+          <h3>Professional</h3>
+          <div class="price">€990<span>/licence</span></div>
+          <ul class="price-features">
+            <li>All protocols unlocked</li>
+            <li>AI-Enhanced timing engine</li>
+            <li>Full show diagnostics &amp; export</li>
+            <li>macOS + Windows (2 seats)</li>
+            <li>Remote Web Dashboard</li>
+            <li>Priority support (24h)</li>
+          </ul>
+          <a href="#contact" class="btn-primary" style="display:block; text-align:center; padding:0.8rem;">Get Started</a>
+        </div>
+
+        <div class="price-card">
+          <h3>Enterprise</h3>
+          <div class="price">Custom</div>
+          <ul class="price-features">
+            <li>Unlimited seats</li>
+            <li>Dedicated rack hardware</li>
+            <li>Custom protocol integration</li>
+            <li>On-site deployment &amp; training</li>
+            <li>SLA &amp; dedicated engineer</li>
+          </ul>
+          <a href="#contact" class="btn-ghost" style="display:block; text-align:center; padding:0.8rem;">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT / DEMO -->
+  <section id="contact" style="background: var(--surface);">
+    <div class="container" style="text-align:center;">
+      <p class="section-tag">Get in Touch</p>
+      <h2 class="section-title">Ready to lock your show in sync?</h2>
+      <p class="section-sub" style="margin: auto;">Request a free demo or ask about custom deployments for your next event.</p>
+
+      <form onsubmit="handleForm(event)">
+        <input type="text" name="name" placeholder="Your name" required>
+        <input type="email" name="email" placeholder="Professional email" required>
+        <select name="plan">
+          <option value="">Select a plan…</option>
+          <option>Studio</option>
+          <option>Professional</option>
+          <option>Enterprise</option>
+          <option>Just a demo</option>
+        </select>
+        <textarea name="message" placeholder="Tell us about your setup (protocols, venue size, platform…)"></textarea>
+        <button type="submit">Send Request →</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">⏱ TIME SOLUTION</div>
+    <div class="footer-sub">Developed by Audio Solutions Network · Stable. Sync. Secure.</div>
+    <div class="footer-links">
+      <a href="#features">Features</a>
+      <a href="#protocols">Protocols</a>
+      <a href="#dashboard">Dashboard</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#contact">Contact</a>
+      <a href="https://github.com/audionetworkconcept-droid/timesolution-site">GitHub</a>
+    </div>
+    <div class="copy">&copy; 2026 Time Solution. All rights reserved. Audio Solutions Network.</div>
+  </footer>
+
+  <script>
+    function handleForm(e) {
+      e.preventDefault();
+      const btn = e.target.querySelector('button[type="submit"]');
+      btn.textContent = '✓ Request sent — we\'ll be in touch within 24h';
+      btn.style.background = '#22c55e';
+      btn.disabled = true;
+    }
+  </script>
+
+</body>
+</html>
