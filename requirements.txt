@@ -1,0 +1,14 @@
+# Time Solution – Python dependencies
+# Install with: pip install -r requirements.txt
+
+# Core networking / protocol libraries
+python-rtmidi>=1.5.8       # MIDI / MTC input
+python-osc>=1.8.3          # OSC send & receive
+
+# Optional: web dashboard backend (FastAPI + uvicorn)
+fastapi>=0.111.0
+uvicorn[standard]>=0.29.0
+
+# Development / testing
+pytest>=8.2.0
+pytest-timeout>=2.3.1

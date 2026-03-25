@@ -1,0 +1,41 @@
+# Time Solution – .gitignore
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+*.so
+*.dylib
+
+# Virtual environments
+.venv/
+venv/
+env/
+.env
+
+# IDE / editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*.DS_Store
+
+# Show logs (user-generated, not committed)
+*.log
+show_data_*.log
+brain_v*.dat
+
+# Distribution / packaging
+*.whl
+*.tar.gz
+
+# Node (if a web build step is added later)
+node_modules/
+dist/
+.cache/
